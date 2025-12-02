@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <!-- ---------------- HEADER ---------------- -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
+            </a>
+        </div>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navegación -->
+        <nav>
+            <!-- Menú Desktop -->
+            <ul class="desktop">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+            </ul>
+
+            <!-- Menú Mobile -->
+            <ul class="mobile">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- ---------------- HERO SECTION ---------------- -->
+<main>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Cómo empezó todo…</h1>
+
+            <p>
+                Ashbis nació de una necesidad real: la falta de un espacio seguro, organizado y accesible donde guardar la información veterinaria de nuestras mascotas. 
+                Entre carnets de papel que se pierden, documentos que se rompen, vacunas olvidadas y emergencias sin datos clave, se hizo evidente que algo tenía que cambiar.
+                Como dueña y amante de los animales, entendí lo difícil que es gestionar su salud sin un sistema unificado. 
+                Así surgió la idea: una app que protegiera su bienestar, que conectara a dueños, veterinarias y refugios, 
+                y que hiciera más fácil cuidar a quienes amamos.
+            </p>
+
+            <a href="acerca-de.html" class="btn">Ver más</a>
+        </div>
+    </section>
+
+    <!-- Tarjeta: Misión -->
+    <div class="info-card">
+        <h2>Misión</h2>
+        <p>
+            Facilitar el cuidado y la gestión de la salud de mascotas mediante tecnología accesible, clara y segura.
+            Ashbis busca digitalizar su información, evitar pérdidas y mejorar la comunicación entre quienes participan en su bienestar.
+        </p>
+    </div>
+
+    <!-- Tarjeta: Visión -->
+<div class="info-card">
+    <h2>Visión</h2>
+    <p>
+        Convertirnos en la plataforma líder en gestión digital del bienestar animal, 
+        facilitando la comunicación entre dueños, veterinarias y organizaciones.  
+        Queremos que cada mascota tenga un registro completo, accesible y seguro,
+        contribuyendo a un mundo donde su salud esté siempre protegida.
+    </p>
+</div>
+
+<!-- Tarjeta: Objetivo (borde punteado no lineal) -->
+<div class="info-card-dotted">
+    <h2>Objetivo</h2>
+    <p>
+        Desarrollar un ecosistema digital que acompañe cada etapa de la vida de las mascotas, 
+        permitiendo un control claro, ordenado y confiable de su salud.  
+        Nuestro objetivo es simplificar el acceso a información importante, 
+        reducir pérdidas de documentos y apoyar tanto a dueños como a profesionales y refugios 
+        en la toma de decisiones informadas.
+    </p>
+</div>
+
+<!-- ------------------- EQUIPO DE TRABAJO ------------------- -->
+<section class="team-section">
+    <h2>Equipo de Trabajo</h2>
+
+    <div class="team-container">
+
+        <!-- Persona 1 -->
+        <div class="team-card">
+            <img src="/img/equipo1.jpg" alt="Foto Integrante" class="team-photo">
+            <div class="team-info">
+                <h3>Ana Rayen Castillo</h3>
+                <p>Fundadora & Desarrolladora Full Stack</p>
+            </div>
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="team-card">
+            <img src="/img/equipo2.jpg" alt="Foto Integrante" class="team-photo">
+            <div class="team-info">
+                <h3>[Nombre]</h3>
+                <p>[Cargo]</p>
+            </div>
+        </div>
+
+        <!-- Persona 3 -->
+        <div class="team-card">
+            <img src="/img/equipo3.jpg" alt="Foto Integrante" class="team-photo">
+            <div class="team-info">
+                <h3>[Nombre]</h3>
+                <p>[Cargo]</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+</main>
+
+
+<!-- ---------------- FOOTER ---------------- -->
+    <footer>
+        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
+        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <!-- ---------------- SCRIPT MENU ---------------- -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

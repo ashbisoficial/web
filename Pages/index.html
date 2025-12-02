@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Ashbis</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <!-- ---------------- HEADER ---------------- -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
+            </a>
+        </div>
+
+        <!-- Menú Hamburguesa -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navegación -->
+        <nav>
+            <!-- Menú Desktop -->
+            <ul class="desktop">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+            </ul>
+
+            <!-- Menú Mobile -->
+            <ul class="mobile">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ---------------- HERO SECTION ---------------- -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1>¿Qué es Ashbis?</h1>
+
+                <p>
+                    Ashbis es la app que centraliza toda la información veterinaria de tus mascotas: vacunas, citas,
+                    medicamentos, exámenes, documentos y cuidados especiales.  
+                    Accede a su historial desde cualquier dispositivo, comparte información con veterinarias y utiliza
+                    nuestro QR inteligente para mantener a tu mascota segura si se pierde.  
+                    Todo lo que tu compañero necesita, organizado y siempre disponible.
+                </p>
+
+                <a href="acerca-de.html" class="btn">Ver más</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer>
+        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
+        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <!-- ---------------- SCRIPT MENU ---------------- -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
