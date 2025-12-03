@@ -3,50 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto | Ashbis</title>
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .contact-container {
+            max-width: 700px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: #fff;
+            border: 3px solid #a30101;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            color: #a30101;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-container label {
+            font-weight: 600;
+            margin-bottom: .3rem;
+            display: block;
+            color: #000;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: .9rem;
+            margin-bottom: 1rem;
+            border: 2px solid #a30101;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: "Poppins";
+        }
+
+        .contact-container button {
+            width: 100%;
+            padding: 1rem;
+            background: #a30101;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact-container button:hover {
+            background: #7a0101;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- ---------------- HEADER ---------------- -->
-    <header>
-        <!-- Logo -->
-        <div class="logo">
-            <a href="index.html">
-                <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
-            </a>
-        </div>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
+        </a>
+    </div>
 
-        <!-- Menú Hamburguesa -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div class="hamburger">
+        <span></span><span></span><span></span>
+    </div>
 
-        <!-- Navegación -->
-        <nav>
-            <!-- Menú Desktop -->
-            <ul class="desktop">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
+    <nav>
+        <ul class="desktop">
+            <li><a href="acerca-de.html">Acerca de</a></li>
+            <li><a href="funcionalidades.html">Funcionalidades</a></li>
+            <li><a href="descargar.html">Descargar</a></li>
+            <li><a href="donar.html">Donar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+        </ul>
 
-            <!-- Menú Mobile -->
-            <ul class="mobile">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+        <ul class="mobile">
+            <li><a href="acerca-de.html">Acerca de</a></li>
+            <li><a href="funcionalidades.html">Funcionalidades</a></li>
+            <li><a href="descargar.html">Descargar</a></li>
+            <li><a href="donar.html">Donar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<div class="contact-container">
+    <h2>Contáctanos</h2>
+
+    <form action="https://formspree.io/f/xqakgrdn" method="POST">
+        <label for="name">Nombre completo</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="message">Mensaje</label>
+        <textarea name="message" id="message" rows="6" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+    </form>
+</div>
+
+</main>
+
+<footer>
+    <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
+    <p>© 2025 Ashbis. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile');
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>

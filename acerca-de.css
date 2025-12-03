@@ -1,0 +1,328 @@
+/* =========================================
+   RESET GENERAL
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+header {
+    width: 100%;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200,200,200,0.4);
+}
+
+.logo img {
+    height: 45px;
+}
+
+nav ul.desktop {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul.desktop li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul.desktop li a:hover {
+    color: #c40303;
+}
+
+/* NAV MOBILE */
+.hamburger {
+    width: 28px;
+    height: 18px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+}
+
+nav ul.mobile {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 65%;
+    background: white;
+    height: 100vh;
+    padding: 40px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: right .3s ease;
+}
+
+nav ul.mobile.active {
+    right: 0;
+}
+
+nav ul.mobile li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* =========================================
+   SNAP SOLO PARA LAS PRIMERAS 4 SECCIONES
+========================================= */
+.snap-container {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.page-section {
+    min-height: 100vh;
+    padding: 4.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease-out, transform .8s ease-out;
+}
+
+.page-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-section:nth-child(-n + 4) {
+    scroll-snap-align: start;
+}
+
+.snap-container {
+    scroll-snap-type: y mandatory;
+}
+
+/* Exceptuar las siguientes del snap */
+.apply-section {
+    scroll-snap-align: none !important;
+    min-height: auto !important;
+    padding: 120px 20px;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero-section {
+    background: url('/img/fondo.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fade-up 1.2s ease-out forwards;
+}
+
+@keyframes fade-in { from { opacity:0 } to { opacity:1 } }
+@keyframes fade-up {
+    0% { opacity:0; transform:translateY(15px); }
+    100% { opacity:1; transform:translateY(0); }
+}
+
+/* =========================================
+   TARJETAS 
+========================================= */
+.info-card, .info-card-dotted {
+    max-width: 700px;
+    background: #ffffffcc;
+    padding: 30px;
+    border-radius: 16px;
+    color: #000;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    border: 2px solid #c40303;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+}
+
+.info-card-dotted {
+    border-style: dashed;
+}
+
+.info-card h2,
+.info-card-dotted h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.info-card p,
+.info-card-dotted p {
+    line-height: 1.7;
+}
+
+/* =========================================
+   EQUIPO
+========================================= */
+.team-section {
+    background: #fff;
+}
+
+.team-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card {
+    background: #fff;
+    width: 260px;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(25px);
+    opacity: 0;
+    animation: fade-up .8s ease forwards;
+}
+
+.team-card:nth-child(odd) {
+    animation-delay: .2s;
+}
+.team-card:nth-child(even) {
+    animation-delay: .4s;
+}
+
+.team-photo {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================================
+   FORMULARIO DE POSTULACIÓN
+========================================= */
+.apply-section {
+    background: #fafafa;
+}
+
+.apply-container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid #ddd;
+}
+
+.apply-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.apply-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.apply-form .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.apply-form label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.apply-form input,
+.apply-form select,
+.apply-form textarea {
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.apply-btn {
+    width: 100%;
+    padding: 14px;
+    background: #c40303;
+    border: none;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.apply-btn:hover {
+    background: #e21414;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+footer img {
+    width: 120px;
+    margin-bottom: 10px;
+}

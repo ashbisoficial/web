@@ -3,30 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donar</title>
+    <title>Donar | Ashbis</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
 
     <!-- ---------------- HEADER ---------------- -->
     <header>
-        <!-- Logo -->
         <div class="logo">
             <a href="index.html">
                 <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
             </a>
         </div>
 
-        <!-- Menú Hamburguesa -->
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <!-- Navegación -->
         <nav>
-            <!-- Menú Desktop -->
             <ul class="desktop">
                 <li><a href="acerca-de.html">Acerca de</a></li>
                 <li><a href="funcionalidades.html">Funcionalidades</a></li>
@@ -36,7 +33,6 @@
                 <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
             </ul>
 
-            <!-- Menú Mobile -->
             <ul class="mobile">
                 <li><a href="acerca-de.html">Acerca de</a></li>
                 <li><a href="funcionalidades.html">Funcionalidades</a></li>
@@ -47,6 +43,75 @@
             </ul>
         </nav>
     </header>
-    
+
+
+    <!-- ---------------- SECCIÓN DONAR ---------------- -->
+    <main style="padding: 3rem 1rem; max-width: 900px; margin: auto;">
+
+        <section class="info-card">
+            <h2>Ayúdanos a seguir creciendo</h2>
+            <p>
+                Ashbis es un proyecto independiente creado con mucho cariño para mejorar la vida de las mascotas y sus dueños.
+                Tus aportes nos ayudan a mantener los servidores, desarrollar nuevas funcionalidades, mejorar la app y seguir
+                entregando herramientas gratuitas a toda la comunidad.
+            </p>
+        </section>
+
+        <section class="info-card-dotted">
+            <h2>¿Cómo puedes donar?</h2>
+            <p>Puedes aportar a través de cualquiera de los siguientes medios:</p>
+
+            <div style="margin-top: 1.5rem; text-align:center;">
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">Transferencia Bancaria</h3>
+                    <p style="font-size:1rem;">
+                        Banco: **Banco Estado** <br>
+                        Cuenta Vista: **123456789** <br>
+                        Nombre: **Ashbis App** <br>
+                        Email: **contacto@ashbis.cl**
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">PayPal</h3>
+                    <a href="#" class="btn" style="margin-top:0.3rem;">Donar con PayPal</a>
+                </div>
+
+                <div>
+                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">Ko-fi</h3>
+                    <a href="#" class="btn" style="margin-top:0.3rem;">Invítanos un cafecito ☕</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h2>Gracias por apoyar Ashbis ❤️</h2>
+            <p>
+                Cada aporte, grande o pequeño, nos ayuda a seguir mejorando la app y acercarnos a la meta
+                de ofrecer una experiencia completa, rápida y accesible para todos los amantes de los animales.
+            </p>
+        </section>
+
+    </main>
+
+
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer>
+        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
+        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <!-- ---------------- SCRIPT ---------------- -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
