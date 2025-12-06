@@ -1,6 +1,4 @@
-/* =========================================
-   RESET GENERAL
-========================================= */
+/* ------------------- RESET BÁSICO ------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -9,109 +7,207 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #ffffff;
-    color: #222;
-    overflow-x: hidden;
+    background-color: #000000;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* =========================================
-   HEADER
-========================================= */
+/* ------------------- HEADER / NAV ------------------- */
+
 header {
-    width: 100%;
-    padding: 16px 40px;
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(200,200,200,0.4);
 }
 
-.logo img {
-    height: 45px;
-}
-
-nav ul.desktop {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-nav ul.desktop li a {
-    color: #000;
+.logo a {
+    color: #a30101;
     text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* NAV Desktop */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
     font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-nav ul.desktop li a:hover {
-    color: #c40303;
+nav a:hover {
+    color: #a30101;
 }
 
-/* NAV MOBILE */
+/* ------------------- MENÚ HAMBURGUESA ------------------- */
+
 .hamburger {
-    width: 28px;
-    height: 18px;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
     cursor: pointer;
+    gap: 5px;
 }
 
 .hamburger span {
-    width: 100%;
+    width: 28px;
     height: 3px;
-    background: #000;
-    border-radius: 5px;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* NAV MOBILE hidden */
+nav {
+    position: relative;
 }
 
 nav ul.mobile {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 65%;
-    background: white;
-    height: 100vh;
-    padding: 40px;
-    list-style: none;
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+nav ul.mobile a {
+    padding: 0.8rem 0;
+}
+
+/* ------------------- HERO ------------------- */
+
+.hero-section {
+    position: relative;
+    height: 85vh;
+    background-image: url('/img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #a30101;
+    padding: 0.9rem 2.2rem;
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #7a0101;
+}
+
+
+/* ------------------- FOOTER ------------------- */
+
+footer {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    transition: right .3s ease;
+    align-items: center;
+    gap: 1rem;
 }
 
-nav ul.mobile.active {
-    right: 0;
+footer img {
+    width: 70px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-nav ul.mobile li a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
+footer img:hover {
+    transform: scale(1.08);
 }
 
-/* =========================================
-   SNAP SOLO PARA LAS PRIMERAS 4 SECCIONES
-========================================= */
-.snap-container {
-    overflow-y: auto;
-    scroll-behavior: smooth;
+footer p {
+    color: #000000;
+    font-size: 0.9rem;
 }
 
+/* ------------------- RESET BÁSICO ------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Mantengo NAV + HERO exactamente como tu código -------- */
+
+
+/* ===================================================== */
+/*               NUEVO DISEÑO ESTILO CAPCUT              */
+/* ===================================================== */
+
+/* SECCIONES GENERALES */
 .page-section {
-    min-height: 100vh;
-    padding: 4.5rem 1.5rem;
+    width: 100%;
+    padding: 6rem 3rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity .8s ease-out, transform .8s ease-out;
+    transition: 0.8s ease;
 }
 
 .page-section.visible {
@@ -119,210 +215,213 @@ nav ul.mobile li a {
     transform: translateY(0);
 }
 
-.page-section:nth-child(-n + 4) {
-    scroll-snap-align: start;
+/* CONTENEDOR DE CADA BLOQUE */
+.info-card,
+.info-card-dotted {
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+    gap: 3rem;
 }
 
-.snap-container {
-    scroll-snap-type: y mandatory;
+/* VIDEO DE FONDO IZQUIERDA */
+.section-video {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(180, 0, 0, 0.808);
 }
 
-/* Exceptuar las siguientes del snap */
-.apply-section {
-    scroll-snap-align: none !important;
-    min-height: auto !important;
-    padding: 120px 20px;
+.section-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* =========================================
-   HERO SECTION
-========================================= */
-.hero-section {
-    background: url('/img/fondo.jpg') center/cover no-repeat;
+/* TEXTO DERECHA */
+.info-text h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.info-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* BOTÓN */
+.info-text .btn-white {
+    background: #fff;
+    color: #000;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.info-text .btn-white:hover {
+    background: #d6d6d6;
+}
+
+/* TARJETA CON BORDE PUNTOS */
+.info-card-dotted {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+
+/* ===================================================== */
+/*                   SECCIÓN EQUIPO                      */
+/* ===================================================== */
+
+.team-section {
+    text-align: center;
+    padding: 7rem 2rem;
     position: relative;
 }
 
-.hero-overlay {
+.team-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* FONDO ANIMADO */
+.animated-bg {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: radial-gradient(
+        circle at var(--x, 50%) var(--y, 50%),
+        rgba(255, 0, 0, 0.151),
+        transparent 60%
+    );
+    pointer-events: none;
+    transition: 0.1s;
 }
 
-.hero-content {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    max-width: 700px;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    animation: fade-in 1s ease-out forwards;
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    opacity: 0;
-    animation: fade-up 1.2s ease-out forwards;
-}
-
-@keyframes fade-in { from { opacity:0 } to { opacity:1 } }
-@keyframes fade-up {
-    0% { opacity:0; transform:translateY(15px); }
-    100% { opacity:1; transform:translateY(0); }
-}
-
-/* =========================================
-   TARJETAS 
-========================================= */
-.info-card, .info-card-dotted {
-    max-width: 700px;
-    background: #ffffffcc;
-    padding: 30px;
-    border-radius: 16px;
-    color: #000;
-    text-align: center;
-    backdrop-filter: blur(6px);
-    border: 2px solid #c40303;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-}
-
-.info-card-dotted {
-    border-style: dashed;
-}
-
-.info-card h2,
-.info-card-dotted h2 {
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-
-.info-card p,
-.info-card-dotted p {
-    line-height: 1.7;
-}
-
-/* =========================================
-   EQUIPO
-========================================= */
-.team-section {
-    background: #fff;
-}
-
+/* CONTENEDOR DEL EQUIPO */
 .team-container {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* TARJETA */
 .team-card {
-    background: #fff;
-    width: 260px;
-    padding: 20px;
-    border-radius: 16px;
+    background: #0d0d0d;
+    padding: 1.5rem;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transform: translateY(25px);
-    opacity: 0;
-    animation: fade-up .8s ease forwards;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.team-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
 }
 
-.team-card:nth-child(odd) {
-    animation-delay: .2s;
-}
-.team-card:nth-child(even) {
-    animation-delay: .4s;
-}
-
+/* FOTO */
 .team-photo {
     width: 100%;
-    height: 240px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
 }
 
-/* =========================================
-   FORMULARIO DE POSTULACIÓN
-========================================= */
+/* TEXTO */
+.team-info h3 {
+    font-size: 1.3rem;
+}
+.team-info p {
+    opacity: 0.7;
+}
+
+
+/* ===================================================== */
+/*               FORMULARIO / POSTULACIÓN                */
+/* ===================================================== */
+
 .apply-section {
-    background: #fafafa;
+    padding: 7rem 2rem;
+    background: #050505;
 }
 
 .apply-container {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    border: 1px solid #ddd;
+    text-align: center;
 }
 
 .apply-title {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 5px;
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
 }
 
 .apply-subtitle {
-    text-align: center;
-    color: #555;
-    margin-bottom: 25px;
+    opacity: 0.7;
+    margin-bottom: 3rem;
 }
 
-.apply-form .form-group {
-    margin-bottom: 18px;
+/* FORMULARIO */
+.apply-form {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
-.apply-form label {
-    margin-bottom: 6px;
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
     font-weight: 600;
 }
 
 .apply-form input,
 .apply-form select,
 .apply-form textarea {
-    padding: 12px;
-    border: 1px solid #bbb;
+    width: 100%;
+    padding: 1rem;
+    background: #111;
+    border: 1px solid #8b0000;
     border-radius: 10px;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 1rem;
 }
 
 .apply-btn {
-    width: 100%;
-    padding: 14px;
-    background: #c40303;
-    border: none;
-    color: #fff;
+    background: #9e0000;
+    color: #ffffff;
+    padding: 1rem;
     border-radius: 12px;
-    font-size: 18px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
-
 .apply-btn:hover {
-    background: #e21414;
+    background: #9e0000;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+
+/* ===================================================== */
+/*                   FOOTER                              */
+/* ===================================================== */
+
 footer {
     text-align: center;
-    padding: 40px 20px;
-    background: #fff;
-    border-top: 1px solid #ddd;
+    padding: 2rem 1rem;
+    background: #ffffff6c;
 }
 
-footer img {
-    width: 120px;
-    margin-bottom: 10px;
+footer p {
+    color: #000;
 }
