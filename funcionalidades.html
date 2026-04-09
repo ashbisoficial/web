@@ -5,108 +5,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funcionalidades | Ashbis</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la página de funcionalidades */
+        .features-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: #000000;
+        }
 
+        .features-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .features-header h1 span {
+            background: linear-gradient(135deg, #E53935 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .features-header p {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+
+        .feature-card {
+            background: #0a0a0a;
+            border-radius: 28px;
+            padding: 36px 28px;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s ease forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(229, 57, 53, 0.4);
+            box-shadow: 0 20px 35px -15px rgba(229, 57, 53, 0.15);
+            background: #0e0e0e;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+            color: white;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: rgba(229, 57, 53, 0.12);
+            color: #E53935;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Sección destacada QR */
+        .feature-highlight {
+            max-width: 1000px;
+            margin: 20px auto 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+            border-radius: 36px;
+            padding: 56px 40px;
+            text-align: center;
+            border: 1px solid rgba(229, 57, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-highlight:hover {
+            border-color: #E53935;
+            box-shadow: 0 25px 40px -20px rgba(229, 57, 53, 0.3);
+        }
+
+        .feature-highlight h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #E53935 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .feature-highlight p {
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .qr-badge {
+            background: #E53935;
+            color: white;
+            padding: 10px 28px;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .qr-badge:hover {
+            transform: scale(1.02);
+            background: #c62828;
+        }
+
+        @media (max-width: 768px) {
+            .features-page {
+                padding-top: 80px;
+            }
+            .features-header h1 {
+                font-size: 2.3rem;
+            }
+            .features-header p {
+                font-size: 1rem;
+            }
+            .features-grid {
+                padding: 20px 20px 40px;
+                gap: 24px;
+            }
+            .feature-card {
+                padding: 28px 20px;
+            }
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            .feature-highlight {
+                margin: 20px 20px 40px;
+                padding: 36px 24px;
+            }
+            .feature-highlight h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
-        </a>
-    </div>
-
-    <div class="hamburger">
-        <span></span><span></span><span></span>
-    </div>
-
-    <nav>
-        <ul class="desktop">
-            <li><a href="acerca-de.html">Acerca de</a></li>
-            <li><a href="funcionalidades.html">Funcionalidades</a></li>
-            <li><a href="descargar.html">Descargar</a></li>
-            <li><a href="donar.html">Donar</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-        </ul>
-
-        <ul class="mobile">
-            <li><a href="acerca-de.html">Acerca de</a></li>
-            <li><a href="funcionalidades.html">Funcionalidades</a></li>
-            <li><a href="descargar.html">Descargar</a></li>
-            <li><a href="donar.html">Donar</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-
-    <section class="team-section">
-        <h2>Funcionalidades Principales</h2>
-
-        <div class="team-container">
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>📘 Historial Veterinario Completo</h3>
-                    <p>Citas, medicamentos, vacunas, exámenes y documentos organizados en un solo lugar.</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>🐾 Carnet Digital de Mascota</h3>
-                    <p>Información vital de tu mascota disponible en segundos, siempre contigo.</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>🔍 QR de Emergencia</h3>
-                    <p>Incluye información importante y contacto rápido si tu mascota se pierde.</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>📍 Mapa Interactivo</h3>
-                    <p>Encuentra veterinarias y tiendas de mascotas en un radio de 5 km desde tu ubicación.</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>📸 Galería de Fotos</h3>
-                    <p>Guarda y organiza los mejores momentos de tu compañero peludo.</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-info">
-                    <h3>❤️ Veterinarias Favoritas</h3>
-                    <p>Accede rápidamente a tus centros veterinarios de confianza.</p>
-                </div>
-            </div>
-
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/img/logo.png" alt="Logo Ashbis">
+            </a>
         </div>
-    </section>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="desktop">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/" target="_blank">📷 Instagram</a></li>
+            </ul>
+            <ul class="mobile">
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/ashbis_oficial/" target="_blank">📷 Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
 
-</main>
+    <main class="features-page">
+        <div class="features-header">
+            <h1>Todo lo que tu mascota <span>necesita</span></h1>
+            <p>Diseñada para dueños responsables que quieren lo mejor para sus animales. Centraliza, protege y conecta.</p>
+        </div>
 
-<footer>
-    <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
-    <p>© 2025 Ashbis. Todos los derechos reservados.</p>
-</footer>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Perfil completo</h3>
+                <p>Registra raza, edad, fotos, rasgos físicos y comportamiento de cada mascota. Toda la información que necesitas, en un solo lugar.</p>
+                <span class="feature-badge">Organización total</span>
+            </div>
 
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile');
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
-</script>
+            <div class="feature-card">
+                <div class="feature-icon">🏥</div>
+                <h3>Historial médico</h3>
+                <p>Vacunas, exámenes, tratamientos y notas veterinarias. Adiós a los papeles perdidos o rotos.</p>
+                <span class="feature-badge">Sin papeles</span>
+            </div>
 
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>QR en el collar</h3>
+                <p>Código único para cada mascota. Si se pierde, al escanearlo se ven tus datos y alertas médicas importantes.</p>
+                <span class="feature-badge">⭐ Anti-pérdida</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Mapa 5 km</h3>
+                <p>Veterinarias y tiendas de mascotas abiertas y cercanas a tu ubicación. Atención rápida en emergencias.</p>
+                <span class="feature-badge">Emergencias</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Sincronización veterinaria</h3>
+                <p>El veterinario escanea el QR y registra la consulta automáticamente en el perfil de tu mascota.</p>
+                <span class="feature-badge">Próximamente</span>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Documentos digitales</h3>
+                <p>Sube carnets, resultados de exámenes y certificados médicos. Todo seguro en la nube.</p>
+                <span class="feature-badge">Todo en la nube</span>
+            </div>
+        </div>
+
+        <div class="feature-highlight">
+            <h2>🐾 QR Anti-pérdida</h2>
+            <p>Imprime el código QR en el collar de tu mascota. Si alguien lo encuentra, escanea y obtiene tus datos de contacto, rasgos físicos, si es agresivo, si necesita medicación o tiene movilidad reducida.</p>
+            <div class="qr-badge">Tranquilidad 24/7</div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
+        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
