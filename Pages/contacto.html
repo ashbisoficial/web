@@ -3,131 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Ashbis</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Video Interactivo</title>
     <style>
-        .contact-container {
-            max-width: 700px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background: #fff;
-            border: 3px solid #a30101;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        .contact-container h2 {
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
             text-align: center;
-            color: #a30101;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
+            margin-bottom: 40px;
         }
-
-        .contact-container label {
-            font-weight: 600;
-            margin-bottom: .3rem;
+        
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .video-container {
+            width: 100%;
+            max-height: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        #main-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            color: #000;
         }
-
-        .contact-container input,
-        .contact-container textarea {
-            width: 100%;
-            padding: .9rem;
-            margin-bottom: 1rem;
-            border: 2px solid #a30101;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: "Poppins";
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
         }
-
-        .contact-container button {
-            width: 100%;
-            padding: 1rem;
-            background: #a30101;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
+        
+        .feature-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 24px;
             cursor: pointer;
-            transition: .3s;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
         }
-
-        .contact-container button:hover {
-            background: #7a0101;
+        
+        .feature-card:hover {
+            background: rgba(30, 41, 59, 0.9);
+            transform: translateY(-8px);
+            border-color: #60a5fa;
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2);
+        }
+        
+        .feature-card.active {
+            background: rgba(30, 41, 59, 0.95);
+            border-color: #a78bfa;
+            box-shadow: 0 10px 25px rgba(167, 139, 250, 0.3);
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            color: #60a5fa;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.6rem;
+        }
+        
+        .feature-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .feature-keywords {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .keyword {
+            background: rgba(96, 165, 250, 0.15);
+            color: #93c5fd;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+        }
+        
+        .video-info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .video-container {
+                max-height: 300px;
+            }
         }
     </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
-        </a>
+    <div class="container">
+        <header>
+            <h1>Edición potente con una amplia variedad de filtros y efectos</h1>
+            <p class="subtitle">Con relaciones o efectos, lleva tus videos al siguiente nivel para contar tu historia con tu propio acto.</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="video-container">
+                <video id="main-video" autoplay muted loop playsinline>
+                    <!-- Video inicial -->
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunset-over-a-beach-1080.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5
+                </video>
+            </div>
+            
+            <div class="video-info">Video activo: <span id="current-video-title">Filtros Creativos</span></div>
+            
+            <div class="features-grid">
+                <div class="feature-card active" data-video="https://assets.mixkit.co/videos/preview/mixkit-sunset-over-a-beach-1080.mp4" data-title="Filtros Creativos">
+                    <h3 class="feature-title">
+                        <span class="feature-icon">🎨</span>
+                        Amplia variedad de efectos
+                    </h3>
+                    <p class="feature-description">
+                        Propone filtros y efectos en un sistema y tiene datos con la regla estable.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Filtros</span>
+                        <span class="keyword">Efectos</span>
+                        <span class="keyword">Sistema estable</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-video="/img/7691943-uhd_4096_2160_30fps.mp4" data-title="Búsqueda Avanzada">
+                    <h3 class="feature-title">
+                        <span class="feature-icon">🔍</span>
+                        Búsqueda inteligente
+                    </h3>
+                    <p class="feature-description">
+                        Lengua por el contenido electrónico del objeto, ubicado y presentado.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Contenido</span>
+                        <span class="keyword">Ubicación</span>
+                        <span class="keyword">Presentación</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-video="/img/7691943-uhd_4096_2160_30fps.mp4" data-title="Gráficos y Claves">
+                    <h3 class="feature-title">
+                        <span class="feature-icon">📊</span>
+                        Palabras clave y gráficas
+                    </h3>
+                    <p class="feature-description">
+                        Utiliza sucesiones clave y gráficas, incluyendo las características técnicas, producto y fiscas.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Gráficas</span>
+                        <span class="keyword">Técnicas</span>
+                        <span class="keyword">Producto</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-video="/img/6173829-uhd_3840_2160_30fps.mp4" data-title="Diseño y Comodidad">
+                    <h3 class="feature-title">
+                        <span class="feature-icon">✨</span>
+                        Diseño y comodidad
+                    </h3>
+                    <p class="feature-description">
+                        Aporte los resultados de uso completamente y puede desarrollarse mediante el proceso laboratorio.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Comodidad</span>
+                        <span class="keyword">Diseño</span>
+                        <span class="keyword">Resultados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <a href="#" class="download-btn">Descárgalo gratuitamente</a>
+        </div>
     </div>
 
-    <div class="hamburger">
-        <span></span><span></span><span></span>
-    </div>
-
-    <nav>
-        <ul class="desktop">
-            <li><a href="acerca-de.html">Acerca de</a></li>
-            <li><a href="funcionalidades.html">Funcionalidades</a></li>
-            <li><a href="descargar.html">Descargar</a></li>
-            <li><a href="donar.html">Donar</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-        </ul>
-
-        <ul class="mobile">
-            <li><a href="acerca-de.html">Acerca de</a></li>
-            <li><a href="funcionalidades.html">Funcionalidades</a></li>
-            <li><a href="descargar.html">Descargar</a></li>
-            <li><a href="donar.html">Donar</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-
-<div class="contact-container">
-    <h2>Contáctanos</h2>
-
-    <form action="https://formspree.io/f/xqakgrdn" method="POST">
-        <label for="name">Nombre completo</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="email">Correo electrónico</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="message">Mensaje</label>
-        <textarea name="message" id="message" rows="6" required></textarea>
-
-        <button type="submit">Enviar mensaje</button>
-    </form>
-</div>
-
-</main>
-
-<footer>
-    <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
-    <p>© 2025 Ashbis. Todos los derechos reservados.</p>
-</footer>
-
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile');
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
-</script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoCards = document.querySelectorAll('.feature-card');
+            const mainVideo = document.getElementById('main-video');
+            const videoSource = mainVideo.querySelector('source');
+            const currentVideoTitle = document.getElementById('current-video-title');
+            
+            // Función para cambiar el video
+            function changeVideo(videoUrl, videoTitle, card) {
+                // Cambiar el src del video
+                videoSource.src = videoUrl;
+                
+                // Cargar y reproducir el nuevo video
+                mainVideo.load();
+                mainVideo.play().catch(e => console.log("Autoplay bloqueado:", e));
+                
+                // Actualizar el título
+                currentVideoTitle.textContent = videoTitle;
+                
+                // Actualizar clases activas
+                videoCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            }
+            
+            // Agregar eventos a cada tarjeta
+            videoCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const videoUrl = this.getAttribute('data-video');
+                    const videoTitle = this.getAttribute('data-title');
+                    changeVideo(videoUrl, videoTitle, this);
+                });
+                
+                // Opcional: mantener el último video seleccionado
+                card.addEventListener('click', function() {
+                    const videoUrl = this.getAttribute('data-video');
+                    const videoTitle = this.getAttribute('data-title');
+                    changeVideo(videoUrl, videoTitle, this);
+                });
+            });
+            
+            // Precargar los videos para transiciones más suaves
+            const videoUrls = Array.from(videoCards).map(card => card.getAttribute('data-video'));
+            videoUrls.forEach(url => {
+                const tempVideo = document.createElement('video');
+                tempVideo.src = url;
+                tempVideo.load();
+            });
+        });
+    </script>
 </body>
 </html>
