@@ -1,327 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Interactivo</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #e2e8f0;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-        
-        .video-container {
-            width: 100%;
-            max-height: 500px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-        
-        #main-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 20px;
-        }
-        
-        .feature-card {
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 12px;
-            padding: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            backdrop-filter: blur(10px);
-        }
-        
-        .feature-card:hover {
-            background: rgba(30, 41, 59, 0.9);
-            transform: translateY(-8px);
-            border-color: #60a5fa;
-            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2);
-        }
-        
-        .feature-card.active {
-            background: rgba(30, 41, 59, 0.95);
-            border-color: #a78bfa;
-            box-shadow: 0 10px 25px rgba(167, 139, 250, 0.3);
-        }
-        
-        .feature-title {
-            font-size: 1.4rem;
-            color: #60a5fa;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .feature-icon {
-            font-size: 1.6rem;
-        }
-        
-        .feature-description {
-            color: #cbd5e1;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .feature-keywords {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .keyword {
-            background: rgba(96, 165, 250, 0.15);
-            color: #93c5fd;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        
-        .download-section {
-            text-align: center;
-            margin-top: 40px;
-            padding: 30px;
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 12px;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            color: white;
-            padding: 14px 36px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
-        }
-        
-        .video-info {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-        
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .video-container {
-                max-height: 300px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Edición potente con una amplia variedad de filtros y efectos</h1>
-            <p class="subtitle">Con relaciones o efectos, lleva tus videos al siguiente nivel para contar tu historia con tu propio acto.</p>
-        </header>
-        
-        <div class="main-content">
-            <div class="video-container">
-                <video id="main-video" autoplay muted loop playsinline>
-                    <!-- Video inicial -->
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunset-over-a-beach-1080.mp4" type="video/mp4">
-                    Tu navegador no soporta videos HTML5
-                </video>
-            </div>
-            
-            <div class="video-info">Video activo: <span id="current-video-title">Filtros Creativos</span></div>
-            
-            <div class="features-grid">
-                <div class="feature-card active" data-video="https://assets.mixkit.co/videos/preview/mixkit-sunset-over-a-beach-1080.mp4" data-title="Filtros Creativos">
-                    <h3 class="feature-title">
-                        <span class="feature-icon">🎨</span>
-                        Amplia variedad de efectos
-                    </h3>
-                    <p class="feature-description">
-                        Propone filtros y efectos en un sistema y tiene datos con la regla estable.
-                    </p>
-                    <div class="feature-keywords">
-                        <span class="keyword">Filtros</span>
-                        <span class="keyword">Efectos</span>
-                        <span class="keyword">Sistema estable</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card" data-video="/img/7691943-uhd_4096_2160_30fps.mp4" data-title="Búsqueda Avanzada">
-                    <h3 class="feature-title">
-                        <span class="feature-icon">🔍</span>
-                        Búsqueda inteligente
-                    </h3>
-                    <p class="feature-description">
-                        Lengua por el contenido electrónico del objeto, ubicado y presentado.
-                    </p>
-                    <div class="feature-keywords">
-                        <span class="keyword">Contenido</span>
-                        <span class="keyword">Ubicación</span>
-                        <span class="keyword">Presentación</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card" data-video="/img/7691943-uhd_4096_2160_30fps.mp4" data-title="Gráficos y Claves">
-                    <h3 class="feature-title">
-                        <span class="feature-icon">📊</span>
-                        Palabras clave y gráficas
-                    </h3>
-                    <p class="feature-description">
-                        Utiliza sucesiones clave y gráficas, incluyendo las características técnicas, producto y fiscas.
-                    </p>
-                    <div class="feature-keywords">
-                        <span class="keyword">Gráficas</span>
-                        <span class="keyword">Técnicas</span>
-                        <span class="keyword">Producto</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card" data-video="/img/6173829-uhd_3840_2160_30fps.mp4" data-title="Diseño y Comodidad">
-                    <h3 class="feature-title">
-                        <span class="feature-icon">✨</span>
-                        Diseño y comodidad
-                    </h3>
-                    <p class="feature-description">
-                        Aporte los resultados de uso completamente y puede desarrollarse mediante el proceso laboratorio.
-                    </p>
-                    <div class="feature-keywords">
-                        <span class="keyword">Comodidad</span>
-                        <span class="keyword">Diseño</span>
-                        <span class="keyword">Resultados</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="download-section">
-            <a href="#" class="download-btn">Descárgalo gratuitamente</a>
-        </div>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Ashbis</title>
+<link rel="stylesheet" href="styles.css">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoCards = document.querySelectorAll('.feature-card');
-            const mainVideo = document.getElementById('main-video');
-            const videoSource = mainVideo.querySelector('source');
-            const currentVideoTitle = document.getElementById('current-video-title');
-            
-            // Función para cambiar el video
-            function changeVideo(videoUrl, videoTitle, card) {
-                // Cambiar el src del video
-                videoSource.src = videoUrl;
-                
-                // Cargar y reproducir el nuevo video
-                mainVideo.load();
-                mainVideo.play().catch(e => console.log("Autoplay bloqueado:", e));
-                
-                // Actualizar el título
-                currentVideoTitle.textContent = videoTitle;
-                
-                // Actualizar clases activas
-                videoCards.forEach(c => c.classList.remove('active'));
-                card.classList.add('active');
-            }
-            
-            // Agregar eventos a cada tarjeta
-            videoCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const videoUrl = this.getAttribute('data-video');
-                    const videoTitle = this.getAttribute('data-title');
-                    changeVideo(videoUrl, videoTitle, this);
-                });
-                
-                // Opcional: mantener el último video seleccionado
-                card.addEventListener('click', function() {
-                    const videoUrl = this.getAttribute('data-video');
-                    const videoTitle = this.getAttribute('data-title');
-                    changeVideo(videoUrl, videoTitle, this);
-                });
-            });
-            
-            // Precargar los videos para transiciones más suaves
-            const videoUrls = Array.from(videoCards).map(card => card.getAttribute('data-video'));
-            videoUrls.forEach(url => {
-                const tempVideo = document.createElement('video');
-                tempVideo.src = url;
-                tempVideo.load();
-            });
-        });
-    </script>
+<style>
+
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+  padding-top: 120px;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  font-family: var(--font-display);
+}
+
+.contact-header span { color: var(--red); }
+.contact-header p { color: var(--gray); }
+
+/* FORM */
+.contact-form {
+  background: var(--black-2);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-group { margin-bottom: 20px; }
+
+label {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.required::after {
+  content: ' *';
+  color: var(--red);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--black-3);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--red);
+  outline: none;
+}
+
+.dynamic-section {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--red);
+  border: none;
+  padding: 14px;
+  border-radius: 40px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #a80000;
+  transform: translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="/img/logo4.png" alt="Logo Ashbis">
+    </a>
+  </div>
+
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav>
+    <ul class="desktop">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <ul class="mobile">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="contact-page">
+
+<div class="contact-header">
+  <h1>Contáctanos <span>🚀</span></h1>
+  <p>Selecciona el motivo y completa la información</p>
+</div>
+
+<form class="contact-form" action="https://formspree.io/f/tuID" method="POST">
+
+<!-- BASICOS -->
+<div class="form-group">
+  <label class="required">Nombre</label>
+  <input type="text" name="nombre" required>
+</div>
+
+<div class="form-group">
+  <label class="required">Email</label>
+  <input type="email" name="email" required>
+</div>
+
+<!-- MOTIVO -->
+<div class="form-group">
+  <label class="required">Motivo</label>
+  <select id="motivo" name="motivo" required>
+    <option value="">Selecciona</option>
+    <option value="equipo">Unirme al equipo</option>
+    <option value="patrocinador">Ser patrocinador</option>
+    <option value="soporte">Soporte</option>
+    <option value="otro">Otro</option>
+  </select>
+</div>
+
+<!-- OTRO -->
+<div class="form-group" id="otroInput" style="display:none;">
+  <label class="required">Especifica el motivo</label>
+  <input type="text" id="otroMotivo" name="otro_motivo">
+</div>
+
+<!-- EQUIPO -->
+<div class="dynamic-section" id="equipoSection">
+
+  <div class="form-group">
+    <label class="required">Área</label>
+    <select id="areaEquipo" name="area_equipo">
+      <option value="">Selecciona</option>
+      <option value="frontend">Frontend</option>
+      <option value="backend">Backend</option>
+      <option value="ux">UI/UX</option>
+      <option value="marketing">Marketing</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <div class="form-group" id="areaOtroInput" style="display:none;">
+    <label class="required">Especifica el área</label>
+    <input type="text" id="areaOtroField" name="area_otro">
+  </div>
+
+  <div class="form-group">
+    <label class="required">CV o portafolio</label>
+    <input type="url" name="cv">
+  </div>
+
+</div>
+
+<!-- PATROCINADOR -->
+<div class="dynamic-section" id="patroSection">
+  <div class="form-group">
+    <label class="required">Tipo</label>
+    <select name="tipo_patro">
+      <option>Empresa</option>
+      <option>Persona natural</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="required">Nombre</label>
+    <input type="text" name="nombre_patro">
+  </div>
+</div>
+
+<!-- MENSAJE -->
+<div class="form-group">
+  <label>Mensaje</label>
+  <textarea name="mensaje"></textarea>
+</div>
+
+<button class="submit-btn">Enviar</button>
+
+</form>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo4.png" alt="">
+    </div>
+    <div class="footer-links">
+      <a href="acerca-de.html">Acerca de</a>
+      <a href="funcionalidades.html">Funcionalidades</a>
+      <a href="descargar.html">Descargar</a>
+      <a href="donar.html">Donar</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2026 Ashbis. Hecho con ❤️ en Chile.</div>
+  </div>
+</footer>
+
+
+<script>
+
+/* MENU */
+document.querySelector('.hamburger').onclick = () => {
+  document.querySelector('.mobile').classList.toggle('active');
+};
+
+/* FORM DINAMICO */
+const motivo = document.getElementById('motivo');
+const equipo = document.getElementById('equipoSection');
+const patro = document.getElementById('patroSection');
+const otro = document.getElementById('otroInput');
+
+motivo.addEventListener('change', () => {
+
+  equipo.style.display = 'none';
+  patro.style.display = 'none';
+  otro.style.display = 'none';
+
+  if(motivo.value === 'equipo') equipo.style.display = 'block';
+  if(motivo.value === 'patrocinador') patro.style.display = 'block';
+  if(motivo.value === 'otro') otro.style.display = 'block';
+
+});
+
+/* AREA DINAMICA */
+const area = document.getElementById('areaEquipo');
+const areaOtro = document.getElementById('areaOtroInput');
+const areaField = document.getElementById('areaOtroField');
+
+area.addEventListener('change', () => {
+  if(area.value === 'otro'){
+    areaOtro.style.display = 'block';
+    areaField.required = true;
+  } else {
+    areaOtro.style.display = 'none';
+    areaField.required = false;
+  }
+});
+
+</script>
+
 </body>
 </html>

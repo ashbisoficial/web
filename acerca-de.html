@@ -1,280 +1,360 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de</title>
-    <link rel="stylesheet" href="acerca-de.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca de | Ashbis</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+.about-page {
+  padding-top: 110px;
+}
+
+/* ===== HERO ===== */
+.about-hero {
+  text-align: center;
+  padding: 110px 6% 70px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.about-hero span {
+  color: var(--red);
+}
+
+.about-hero p {
+  color: var(--gray-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== SECTION ===== */
+.about-section {
+  padding: 110px 6%;
+}
+
+/* ===== CARD ===== */
+.about-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 40px;
+  border-radius: 28px;
+
+  background: linear-gradient(145deg, #0a0a0a, #070707);
+  border: 1px solid rgba(255,255,255,0.05);
+
+  transition: 0.35s ease;
+}
+
+/* Hover más elegante */
+.about-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(193,0,0,0.3);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 40px rgba(193,0,0,0.1);
+}
+
+/* Reverse */
+.about-card.reverse {
+  direction: rtl;
+}
+.about-card.reverse * {
+  direction: ltr;
+}
+
+/* ===== TEXT ===== */
+.about-text h2 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  margin-bottom: 14px;
+}
+
+.about-text p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* ===== MEDIA ===== */
+.about-media {
+  height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.6),
+    0 0 25px rgba(193,0,0,0.08);
+}
+
+.about-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.about-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ===== TEAM ===== */
+.team-section {
+  padding: 130px 6%;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.team-card {
+  background: linear-gradient(145deg, #0a0a0a, #070707);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  transition: 0.35s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(193,0,0,0.4);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.6),
+    0 0 30px rgba(193,0,0,0.15);
+}
+
+/* IMAGE */
+.team-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.team-card:hover img {
+  transform: scale(1.08);
+}
+
+/* INFO */
+.team-info {
+  padding: 18px;
+}
+
+.team-info h3 {
+  color: var(--white);
+}
+
+.team-info p {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+/* ===== BOTONES (🔥 TEXTO BLANCO SIEMPRE) ===== */
+button,
+.apply-btn {
+  color: #ffffff !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+  .about-card {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .about-media {
+    height: 220px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- ---------------- HEADER ---------------- -->
-    <header>
-        <!-- Logo -->
-        <div class="logo">
-            <a href="index.html">
-                <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
-            </a>
-        </div>
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="/img/logo.png">
+    </a>
+  </div>
 
-        <!-- Menú Hamburguesa -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 
-        <!-- Navegación -->
-        <nav>
-            <!-- Menú Desktop -->
-            <ul class="desktop">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
+  <nav>
+    <ul class="desktop">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 
-            <!-- Menú Mobile -->
-            <ul class="mobile">`l-
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
-        </nav>
-    </header>
+    <ul class="mobile">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
+<main class="about-page">
 
-     <!-- ---------------- HERO SECTION ---------------- -->
-    <main>
-        <section class="hero-section">
-            <div class="hero-overlay"></div>
+<!-- HERO -->
+<section class="about-hero">
+  <h1>¿Qué es <span>Ashbis</span>?</h1>
+  <p>
+    Ashbis es la app que centraliza toda la información veterinaria de tus mascotas:
+    vacunas, citas, documentos y cuidados.
+  </p>
+</section>
 
-            <div class="hero-content">
-                <h1>¿Qué es Ashbis?</h1>
+<!-- MISIÓN -->
+<section class="about-section">
+  <div class="about-card">
+    <div class="about-media">
+      <img src="img/gatito.jpg">
+    </div>
 
-                <p>
-                    Ashbis es la app que centraliza toda la información veterinaria de tus mascotas: vacunas, citas,
-                    medicamentos, exámenes, documentos y cuidados especiales.  
-                    Accede a su historial desde cualquier dispositivo, comparte información con veterinarias y utiliza
-                    nuestro QR inteligente para mantener a tu mascota segura si se pierde.  
-                    Todo lo que tu compañero necesita, organizado y siempre disponible.
-                </p>
+    <div class="about-text">
+      <h2>Misión</h2>
+      <p>Facilitar el cuidado de mascotas mediante tecnología accesible y segura.</p>
+    </div>
+  </div>
+</section>
 
-                <a href="acerca-de.html" class="btn">Ver más</a>
-            </div>
-        </section>
-    </main>
-    
-        <!-- ---------------- MISIÓN ---------------- -->
+<!-- VISIÓN -->
+<section class="about-section">
+  <div class="about-card reverse">
+    <div class="about-media">
+      <img src="img/urgencias.jpg">
+    </div>
 
-    <section class="page-section">
-        <div class="info-card">
+    <div class="about-text">
+      <h2>Visión</h2>
+      <p>Ser la plataforma líder en bienestar animal digital.</p>
+    </div>
+  </div>
+</section>
 
-            <div class="section-video">
-                <video autoplay muted loop playsinline>
-                    <source src="/img/6173829-uhd_3840_2160_30fps.mp4" type="video/mp4">
-                </video>
-            </div>
+<!-- OBJETIVO -->
+<section class="about-section">
+  <div class="about-card">
+    <div class="about-media">
+      <img src="img/corazon.jpg">
+    </div>
 
-            <div class="info-text">
-                <h2>Misión</h2>
-                <p>Facilitar el cuidado y la gestión de la salud de mascotas mediante tecnología accesible, clara y segura.
-                        Ashbis busca digitalizar su información, evitar pérdidas y mejorar la comunicación entre quienes participan en su bienestar.
-                    </p>
-            </div>
+    <div class="about-text">
+      <h2>Objetivo</h2>
+      <p>Crear un ecosistema digital completo para el cuidado animal.</p>
+    </div>
+  </div>
+</section>
 
-        </div>
-    </section>
-        <!-- ---------------- VISIÓN ---------------- -->
+<!-- TEAM -->
+<section class="team-section">
+  <h2>Equipo</h2>
 
-        <section class="page-section">
-        <div class="info-card">
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="/img/logo4.png">
+      <div class="team-info">
+        <h3>Nombre</h3>
+        <p>Diseño</p>
+      </div>
+    </div>
 
-            <div class="section-video">
-                <video autoplay muted loop playsinline>
-                    <source src="/img/7691943-uhd_4096_2160_30fps.mp4" type="video/mp4">
-                </video>
-            </div>
+    <div class="team-card">
+      <img src="/img/logo4.png">
+      <div class="team-info">
+        <h3>Nombre</h3>
+        <p>Frontend</p>
+      </div>
+    </div>
 
-            <div class="info-text">
-                <h2>Visión</h2>
-                <p>Convertirnos en la plataforma líder en gestión digital del bienestar animal,
-                    facilitando la comunicación entre dueños, veterinarias y organizaciones.
-                    </p>
-            </div>
+    <div class="team-card">
+      <img src="/img/logo4.png">
+      <div class="team-info">
+        <h3>Nombre</h3>
+        <p>Fullstack</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        </div>
-    </section>
+</main>
 
-        <!-- ---------------- OBJETIVO ---------------- -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo4.png">
+    </div>
 
-        <section class="page-section">
-        <div class="info-card">
+    <div class="footer-links">
+      <a href="acerca-de.html">Acerca de</a>
+      <a href="funcionalidades.html">Funcionalidades</a>
+      <a href="descargar.html">Descargar</a>
+      <a href="donar.html">Donar</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
 
-            <div class="section-video">
-                <video autoplay muted loop playsinline>
-                    <source src="/img/9033464-uhd_3840_2160_25fps.mp4" type="video/mp4">
-                </video>
-            </div>
+    <div class="footer-copy">
+      © 2026 Ashbis. Hecho con ❤️ en Chile.
+    </div>
+  </div>
+</footer>
 
-            <div class="info-text">
-                <h2>Objetivo</h2>
-                <p>Desarrollar un ecosistema digital que acompañe cada etapa de la vida de las mascotas,
-                    permitiendo un control claro, ordenado y confiable de su salud.</p>
-            </div>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile');
 
-        </div>
-    </section>
-
-        <!-- ---------------- EQUIPO (CON FONDO ANIMADO) ---------------- -->
-        <section class="page-section team-section animated-section">
-            <div class="animated-bg"></div>
-
-            <h2>Equipo de Trabajo</h2>
-
-            <div class="team-container">
-
-                <!-- Persona 1 -->
-                <div class="team-card">
-                    <img src="/img/equipo1.jpg" alt="Foto Integrante" class="team-photo">
-                    <div class="team-info">
-                        <h3>Ana Rayen Castillo</h3>
-                        <p>Fundadora & Diseño</p>
-                    </div>
-                </div>
-
-                <!-- Persona 2 -->
-                <div class="team-card">
-                    <img src="/img/equipo2.jpg" alt="Foto Integrante" class="team-photo">
-                    <div class="team-info">
-                        <h3>Javier Cuevas</h3>
-                        <p>Desarrollo Front e Integración</p>
-                    </div>
-                </div>
-
-                <!-- Persona 3 -->
-                <div class="team-card">
-                    <img src="/img/equipo3.jpg" alt="Foto Integrante" class="team-photo">
-                    <div class="team-info">
-                        <h3>Miguel Silva</h3>
-                        <p>Desarrollo fullstack</p>
-                    </div>
-                </div>
-
-                <!-- Persona 4 -->
-                <div class="team-card">
-                    <img src="/img/equipo4.jpg" alt="Foto Integrante" class="team-photo">
-                    <div class="team-info">
-                        <h3>Rodrigo Huican</h3>
-                        <p>Desarrollo Backend</p>
-                    </div>
-                </div>
-                
-
-                <!-- Persona 5 -->
-                <div class="team-card">
-                    <img src="/img/equipo5.jpg" alt="Foto Integrante" class="team-photo">
-                    <div class="team-info">
-                        <h3>Diego Hernandez</h3>
-                        <p>Desarrollo Web</p>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-
-        <section class="apply-section">
-            <div class="apply-container">
-                <h2 class="apply-title">Postula a Nuestro Equipo</h2>
-                <p class="apply-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
-
-                <form class="apply-form">
-                    <div class="form-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" placeholder="Ej: Martín Valdés" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Correo Electrónico</label>
-                        <input type="email" placeholder="Ej: correo@ejemplo.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Puesto al que Postulas</label>
-                        <select required>
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option>Desarrollador Frontend</option>
-                            <option>Desarrollador Backend</option>
-                            <option>Diseñador UI/UX</option>
-                            <option>Marketing y Redes Sociales</option>
-                            <option>Tester / QA</option>
-                            <option>Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Por qué quieres unirte?</label>
-                        <textarea rows="5" placeholder="Escribe tu respuesta aquí..." required></textarea>
-                    </div>
-
-                    <button class="apply-btn" type="submit">Enviar Postulación</button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ---------------- FOOTER ---------------- -->
-    <footer>
-        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
-        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- ---------------- MENU SCRIPT ---------------- -->
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile');
-
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-    </script>
-
-    <!-- ---------------- FONDO ANIMADO SOLO EN EQUIPO ---------------- -->
-    <script>
-        document.addEventListener("mousemove", (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-
-            document.documentElement.style.setProperty("--x", x + "%");
-            document.documentElement.style.setProperty("--y", y + "%");
-        });
-    </script>
-
-    <script>
-        const sections = document.querySelectorAll('.page-section');
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            },
-            { threshold: 0.25 } // activa cuando 25% de la sección es visible
-        );
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>

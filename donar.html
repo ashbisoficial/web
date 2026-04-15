@@ -1,117 +1,299 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donar | Ashbis</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donar | Ashbis</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+.donate-page {
+    padding-top: 100px;
+}
+
+/* ===== HERO ===== */
+.donate-hero {
+    text-align: center;
+    padding: 80px 6% 60px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.donate-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.donate-hero span {
+    color: var(--red);
+}
+
+.donate-hero p {
+    color: var(--gray-light);
+    line-height: 1.7;
+}
+
+/* ===== CARDS ===== */
+.donate-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 6% 100px;
+}
+
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.donate-card {
+    background: var(--black-2);
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.donate-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(193,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(193,0,0,0.15);
+}
+
+.donate-card h3 {
+    font-family: var(--font-display);
+    margin-bottom: 12px;
+}
+
+.donate-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+/* ===== BUTTON ===== */
+.donate-btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.donate-btn:hover {
+    background: #a80000;
+    transform: translateY(-2px);
+}
+
+/* ===== BANK INFO ===== */
+.bank-info {
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+/* ===== FEATURE SECTION ===== */
+.donate-highlight {
+    margin-top: 80px;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    border-radius: 32px;
+    padding: 50px 30px;
+    text-align: center;
+    border: 1px solid rgba(193,0,0,0.2);
+}
+
+.donate-highlight h2 {
+    font-family: var(--font-display);
+    margin-bottom: 15px;
+}
+
+.donate-highlight p {
+    color: var(--gray-light);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ===== IMAGE SPACE ===== */
+.donate-image {
+    margin-top: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 220px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.donate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== THANK YOU ===== */
+.donate-thanks {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.donate-thanks h2 {
+    font-family: var(--font-display);
+    margin-bottom: 10px;
+}
+
+.donate-thanks p {
+    color: var(--gray);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .donate-hero {
+        padding: 60px 20px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- ---------------- HEADER ---------------- -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="/img/logo.png" alt="Logo Ashbis" style="height: 50px;">
-            </a>
-        </div>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/img/logo.png">
+        </a>
+    </div>
 
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div class="hamburger">
+        <span></span><span></span><span></span>
+    </div>
 
-        <nav>
-            <ul class="desktop">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
+    <nav>
+        <ul class="desktop">
+            <li><a href="acerca-de.html">Acerca de</a></li>
+            <li><a href="funcionalidades.html">Funcionalidades</a></li>
+            <li><a href="descargar.html">Descargar</a></li>
+            <li><a href="donar.html">Donar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
 
-            <ul class="mobile">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/">Instagram</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="mobile">
+            <li><a href="acerca-de.html">Acerca de</a></li>
+            <li><a href="funcionalidades.html">Funcionalidades</a></li>
+            <li><a href="descargar.html">Descargar</a></li>
+            <li><a href="donar.html">Donar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
+<main class="donate-page">
 
-    <!-- ---------------- SECCIÓN DONAR ---------------- -->
-    <main style="padding: 3rem 1rem; max-width: 900px; margin: auto;">
+    <!-- HERO -->
+    <section class="donate-hero">
+        <h1>Apoya <span>Ashbis</span></h1>
+        <p>
+            Tu ayuda nos permite seguir desarrollando la app, mejorar funcionalidades
+            y mantener el servicio disponible para todos.
+        </p>
+    </section>
 
-        <section class="info-card">
-            <h2>Ayúdanos a seguir creciendo</h2>
-            <p>
-                Ashbis es un proyecto independiente creado con mucho cariño para mejorar la vida de las mascotas y sus dueños.
-                Tus aportes nos ayudan a mantener los servidores, desarrollar nuevas funcionalidades, mejorar la app y seguir
-                entregando herramientas gratuitas a toda la comunidad.
-            </p>
-        </section>
+    <!-- MÉTODOS -->
+    <section class="donate-container">
+        <div class="donate-grid">
 
-        <section class="info-card-dotted">
-            <h2>¿Cómo puedes donar?</h2>
-            <p>Puedes aportar a través de cualquiera de los siguientes medios:</p>
+            <!-- Banco -->
+            <div class="donate-card">
+                <h3>🏦 Transferencia</h3>
+                <p>Apoya directamente vía transferencia bancaria</p>
 
-            <div style="margin-top: 1.5rem; text-align:center;">
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">Transferencia Bancaria</h3>
-                    <p style="font-size:1rem;">
-                        Banco: **Banco Estado** <br>
-                        Cuenta Vista: **123456789** <br>
-                        Nombre: **Ashbis App** <br>
-                        Email: **contacto@ashbis.cl**
-                    </p>
+                <div class="bank-info">
+                    Banco Estado<br>
+                    Cuenta Vista: 123456789<br>
+                    Nombre: Ashbis<br>
+                    contacto@ashbis.cl
                 </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">PayPal</h3>
-                    <a href="#" class="btn" style="margin-top:0.3rem;">Donar con PayPal</a>
-                </div>
-
-                <div>
-                    <h3 style="color:#a30101; font-size:1.3rem; margin-bottom:0.5rem;">Ko-fi</h3>
-                    <a href="#" class="btn" style="margin-top:0.3rem;">Invítanos un cafecito ☕</a>
-                </div>
-
             </div>
-        </section>
 
-        <section class="info-card">
-            <h2>Gracias por apoyar Ashbis ❤️</h2>
+            <!-- PayPal -->
+            <div class="donate-card">
+                <h3>💳 PayPal</h3>
+                <p>Donación rápida y segura</p>
+                <a href="#" class="donate-btn">Donar</a>
+            </div>
+
+            <!-- Ko-fi -->
+            <div class="donate-card">
+                <h3>☕ Ko-fi</h3>
+                <p>Invítanos un café para seguir creando</p>
+                <a href="#" class="donate-btn">Apoyar</a>
+            </div>
+
+        </div>
+
+        <!-- DESTACADO -->
+        <div class="donate-highlight">
+            <h2>💡 Cada aporte importa</h2>
             <p>
-                Cada aporte, grande o pequeño, nos ayuda a seguir mejorando la app y acercarnos a la meta
-                de ofrecer una experiencia completa, rápida y accesible para todos los amantes de los animales.
+                Desde mejoras en la app hasta servidores y nuevas funciones,
+                tu apoyo hace posible que Ashbis siga creciendo.
             </p>
-        </section>
 
-    </main>
+            <!-- IMAGEN -->
+            <div class="donate-image">
+                <img src="/img/donacion.jpg" alt="Apoyo Ashbis">
+            </div>
+        </div>
 
+        <!-- GRACIAS -->
+        <div class="donate-thanks">
+            <h2>❤️ Gracias por confiar</h2>
+            <p>
+                Cada donación nos acerca a construir una mejor experiencia
+                para todos los dueños de mascotas.
+            </p>
+        </div>
 
-    <!-- ---------------- FOOTER ---------------- -->
-    <footer>
-        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
-        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
-    </footer>
+    </section>
 
+</main>
 
-    <!-- ---------------- SCRIPT ---------------- -->
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile');
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-    </script>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo4.png" alt="">
+    </div>
+    <div class="footer-links">
+      <a href="acerca-de.html">Acerca de</a>
+      <a href="funcionalidades.html">Funcionalidades</a>
+      <a href="descargar.html">Descargar</a>
+      <a href="donar.html">Donar</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2026 Ashbis. Hecho con ❤️ en Chile.</div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile');
+
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>

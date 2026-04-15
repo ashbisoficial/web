@@ -1,314 +1,342 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funcionalidades | Ashbis</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos específicos para la página de funcionalidades */
-        .features-page {
-            padding-top: 100px;
-            min-height: 100vh;
-            background: #000000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funcionalidades | Ashbis</title>
 
-        .features-header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-        .features-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 20px;
-        }
+<style>
 
-        .features-header h1 span {
-            background: linear-gradient(135deg, #E53935 0%, #ff6b6b 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+/* ===== PAGE BASE ===== */
+.features-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: #000;
+}
 
-        .features-header p {
-            color: #a0a0a0;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            font-weight: 400;
-        }
+/* ===== HEADER ===== */
+.features-header {
+    text-align: center;
+    padding: 80px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px 60px;
-        }
+.features-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff, #dcdcdc);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-        .feature-card {
-            background: #0a0a0a;
-            border-radius: 28px;
-            padding: 36px 28px;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: cardFadeIn 0.6s ease forwards;
-        }
+.features-header h1 span {
+    background: linear-gradient(135deg, #E53935, #ff6b6b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4) { animation-delay: 0.4s; }
-        .feature-card:nth-child(5) { animation-delay: 0.5s; }
-        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+.features-header p {
+    color: #a0a0a0;
+    font-size: 1.15rem;
+}
 
-        @keyframes cardFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* ===== GRID ===== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(229, 57, 53, 0.4);
-            box-shadow: 0 20px 35px -15px rgba(229, 57, 53, 0.15);
-            background: #0e0e0e;
-        }
+/* ===== CARD ===== */
+.feature-card {
+    background: linear-gradient(145deg, #0a0a0a, #070707);
+    border-radius: 28px;
+    padding: 24px;
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 24px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(229,57,53,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.05);
-        }
+/* IMAGE */
+.feature-media {
+    width: 100%;
+    height: 160px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #111;
+}
 
-        .feature-card h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
-            color: white;
-        }
+.feature-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .feature-card p {
-            color: #b0b0b0;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
+/* ICON */
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
 
-        .feature-badge {
-            display: inline-block;
-            background: rgba(229, 57, 53, 0.12);
-            color: #E53935;
-            padding: 5px 14px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            backdrop-filter: blur(4px);
-        }
+/* TEXT */
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
 
-        /* Sección destacada QR */
-        .feature-highlight {
-            max-width: 1000px;
-            margin: 20px auto 60px;
-            background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
-            border-radius: 36px;
-            padding: 56px 40px;
-            text-align: center;
-            border: 1px solid rgba(229, 57, 53, 0.3);
-            transition: all 0.3s ease;
-        }
+.feature-card p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 14px;
+}
 
-        .feature-highlight:hover {
-            border-color: #E53935;
-            box-shadow: 0 25px 40px -20px rgba(229, 57, 53, 0.3);
-        }
+.feature-badge {
+    background: rgba(229,57,53,0.12);
+    color: #E53935;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+}
 
-        .feature-highlight h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #E53935 0%, #ff6b6b 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 20px;
-        }
+/* ===== HIGHLIGHT ===== */
+.feature-highlight {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(229,57,53,0.25);
+}
 
-        .feature-highlight p {
-            color: #cccccc;
-            max-width: 700px;
-            margin: 0 auto 28px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+.highlight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .qr-badge {
-            background: #E53935;
-            color: white;
-            padding: 10px 28px;
-            border-radius: 60px;
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: -0.01em;
-            transition: all 0.3s ease;
-        }
+.highlight-content {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .qr-badge:hover {
-            transform: scale(1.02);
-            background: #c62828;
-        }
+.highlight-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #E53935, #ff6b6b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-        @media (max-width: 768px) {
-            .features-page {
-                padding-top: 80px;
-            }
-            .features-header h1 {
-                font-size: 2.3rem;
-            }
-            .features-header p {
-                font-size: 1rem;
-            }
-            .features-grid {
-                padding: 20px 20px 40px;
-                gap: 24px;
-            }
-            .feature-card {
-                padding: 28px 20px;
-            }
-            .feature-card h3 {
-                font-size: 1.3rem;
-            }
-            .feature-highlight {
-                margin: 20px 20px 40px;
-                padding: 36px 24px;
-            }
-            .feature-highlight h2 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+.highlight-content p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.qr-badge {
+    background: #E53935;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .features-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .features-grid {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .feature-media {
+        height: 140px;
+    }
+
+    .feature-highlight {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-content {
+        padding: 30px 20px;
+        text-align: center;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="/img/logo.png" alt="Logo Ashbis">
-            </a>
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/logo4.png" alt="Ashbis Logo">
+    </a>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav>
+    <ul class="desktop">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <ul class="mobile" id="mobileMenu">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="features-page">
+
+<!-- HEADER -->
+<div class="features-header">
+    <h1>Todo lo que tu mascota <span>necesita</span></h1>
+    <p>Centraliza, protege y conecta todo el cuidado de tu mascota en una sola app.</p>
+</div>
+
+<!-- GRID -->
+<div class="features-grid">
+
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature1.jpg" alt="">
         </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="feature-icon">📋</div>
+        <h3>Perfil completo</h3>
+        <p>Información detallada de tu mascota en un solo lugar.</p>
+        <span class="feature-badge">Organización total</span>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature2.jpg" alt="">
         </div>
-        <nav>
-            <ul class="desktop">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/" target="_blank">📷 Instagram</a></li>
-            </ul>
-            <ul class="mobile">
-                <li><a href="acerca-de.html">Acerca de</a></li>
-                <li><a href="funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
-                <li><a href="donar.html">Donar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/ashbis_oficial/" target="_blank">📷 Instagram</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="feature-icon">🏥</div>
+        <h3>Historial médico</h3>
+        <p>Vacunas, tratamientos y controles siempre accesibles.</p>
+        <span class="feature-badge">Sin papeles</span>
+    </div>
 
-    <main class="features-page">
-        <div class="features-header">
-            <h1>Todo lo que tu mascota <span>necesita</span></h1>
-            <p>Diseñada para dueños responsables que quieren lo mejor para sus animales. Centraliza, protege y conecta.</p>
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature3.jpg" alt="">
         </div>
+        <div class="feature-icon">📱</div>
+        <h3>QR en el collar</h3>
+        <p>Recupera a tu mascota rápidamente si se pierde.</p>
+        <span class="feature-badge">⭐ Anti-pérdida</span>
+    </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📋</div>
-                <h3>Perfil completo</h3>
-                <p>Registra raza, edad, fotos, rasgos físicos y comportamiento de cada mascota. Toda la información que necesitas, en un solo lugar.</p>
-                <span class="feature-badge">Organización total</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🏥</div>
-                <h3>Historial médico</h3>
-                <p>Vacunas, exámenes, tratamientos y notas veterinarias. Adiós a los papeles perdidos o rotos.</p>
-                <span class="feature-badge">Sin papeles</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>QR en el collar</h3>
-                <p>Código único para cada mascota. Si se pierde, al escanearlo se ven tus datos y alertas médicas importantes.</p>
-                <span class="feature-badge">⭐ Anti-pérdida</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🗺️</div>
-                <h3>Mapa 5 km</h3>
-                <p>Veterinarias y tiendas de mascotas abiertas y cercanas a tu ubicación. Atención rápida en emergencias.</p>
-                <span class="feature-badge">Emergencias</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Sincronización veterinaria</h3>
-                <p>El veterinario escanea el QR y registra la consulta automáticamente en el perfil de tu mascota.</p>
-                <span class="feature-badge">Próximamente</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📄</div>
-                <h3>Documentos digitales</h3>
-                <p>Sube carnets, resultados de exámenes y certificados médicos. Todo seguro en la nube.</p>
-                <span class="feature-badge">Todo en la nube</span>
-            </div>
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature4.jpg" alt="">
         </div>
+        <div class="feature-icon">🗺️</div>
+        <h3>Mapa veterinario</h3>
+        <p>Encuentra atención cercana en segundos.</p>
+        <span class="feature-badge">Emergencias</span>
+    </div>
 
-        <div class="feature-highlight">
-            <h2>🐾 QR Anti-pérdida</h2>
-            <p>Imprime el código QR en el collar de tu mascota. Si alguien lo encuentra, escanea y obtiene tus datos de contacto, rasgos físicos, si es agresivo, si necesita medicación o tiene movilidad reducida.</p>
-            <div class="qr-badge">Tranquilidad 24/7</div>
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature5.jpg" alt="">
         </div>
-    </main>
+        <div class="feature-icon">🔄</div>
+        <h3>Sincronización vet</h3>
+        <p>Registro automático de consultas veterinarias.</p>
+        <span class="feature-badge">Próximamente</span>
+    </div>
 
-    <footer>
-        <img src="/img/logo-footer.jpg" alt="Logo Ashbis Footer">
-        <p>© 2025 Ashbis. Todos los derechos reservados.</p>
-    </footer>
+    <div class="feature-card">
+        <div class="feature-media">
+            <img src="img/feature6.jpg" alt="">
+        </div>
+        <div class="feature-icon">📄</div>
+        <h3>Documentos digitales</h3>
+        <p>Todo almacenado de forma segura en la nube.</p>
+        <span class="feature-badge">Seguro</span>
+    </div>
 
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile');
+</div>
 
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-    </script>
+<!-- HIGHLIGHT -->
+<div class="feature-highlight">
+    <div class="highlight-image">
+        <img src="img/qr.jpg" alt="">
+    </div>
+    <div class="highlight-content">
+        <h2>🐾 QR Anti-pérdida</h2>
+        <p>Un sistema simple que puede salvar la vida de tu mascota. Acceso inmediato a tu información si alguien la encuentra.</p>
+        <div class="qr-badge">Tranquilidad 24/7</div>
+    </div>
+</div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo4.png" alt="">
+    </div>
+    <div class="footer-links">
+      <a href="acerca-de.html">Acerca de</a>
+      <a href="funcionalidades.html">Funcionalidades</a>
+      <a href="descargar.html">Descargar</a>
+      <a href="donar.html">Donar</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2026 Ashbis. Hecho con ❤️ en Chile.</div>
+  </div>
+</footer>
+
+
+<!-- ===== SCRIPT ===== -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+</script>
+
 </body>
 </html>
