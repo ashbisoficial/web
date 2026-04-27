@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Ashbis</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+  padding-top: 120px;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  font-family: var(--font-display);
+}
+
+.contact-header span { color: var(--red); }
+.contact-header p { color: var(--gray); }
+
+/* FORM */
+.contact-form {
+  background: var(--black-2);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-group { margin-bottom: 20px; }
+
+label {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.required::after {
+  content: ' *';
+  color: var(--red);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--black-3);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--red);
+  outline: none;
+}
+
+.dynamic-section {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--red);
+  border: none;
+  padding: 14px;
+  border-radius: 40px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #a80000;
+  transform: translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/logo4.png" alt="Ashbis Logo">
+    </a>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav>
+    <ul class="desktop">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
+    </ul>
+    <ul class="mobile" id="mobileMenu">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="descargar.html">Descargar</a></li>
+      <li><a href="donar.html">Donar</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="contact-page">
+
+<div class="contact-header">
+  <h1>Contáctanos <span>🚀</span></h1>
+  <p>Selecciona el motivo y completa la información</p>
+</div>
+
+<form class="contact-form" action="https://formspree.io/f/tuID" method="POST">
+
+<!-- BASICOS -->
+<div class="form-group">
+  <label class="required">Nombre</label>
+  <input type="text" name="nombre" required>
+</div>
+
+<div class="form-group">
+  <label class="required">Email</label>
+  <input type="email" name="email" required>
+</div>
+
+<!-- MOTIVO -->
+<div class="form-group">
+  <label class="required">Motivo</label>
+  <select id="motivo" name="motivo" required>
+    <option value="">Selecciona</option>
+    <option value="equipo">Unirme al equipo</option>
+    <option value="patrocinador">Ser patrocinador</option>
+    <option value="soporte">Soporte</option>
+    <option value="otro">Otro</option>
+  </select>
+</div>
+
+<!-- OTRO -->
+<div class="form-group" id="otroInput" style="display:none;">
+  <label class="required">Especifica el motivo</label>
+  <input type="text" id="otroMotivo" name="otro_motivo">
+</div>
+
+<!-- EQUIPO -->
+<div class="dynamic-section" id="equipoSection">
+
+  <div class="form-group">
+    <label class="required">Área</label>
+    <select id="areaEquipo" name="area_equipo">
+      <option value="">Selecciona</option>
+      <option value="frontend">Frontend</option>
+      <option value="backend">Backend</option>
+      <option value="ux">UI/UX</option>
+      <option value="marketing">Marketing</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <div class="form-group" id="areaOtroInput" style="display:none;">
+    <label class="required">Especifica el área</label>
+    <input type="text" id="areaOtroField" name="area_otro">
+  </div>
+
+  <div class="form-group">
+    <label class="required">CV o portafolio</label>
+    <input type="url" name="cv">
+  </div>
+
+</div>
+
+<!-- PATROCINADOR -->
+<div class="dynamic-section" id="patroSection">
+  <div class="form-group">
+    <label class="required">Tipo</label>
+    <select name="tipo_patro">
+      <option>Empresa</option>
+      <option>Persona natural</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="required">Nombre</label>
+    <input type="text" name="nombre_patro">
+  </div>
+</div>
+
+<!-- MENSAJE -->
+<div class="form-group">
+  <label>Mensaje</label>
+  <textarea name="mensaje"></textarea>
+</div>
+
+<button class="submit-btn">Enviar</button>
+
+</form>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo4.png" alt="">
+    </div>
+    <div class="footer-links">
+      <a href="acerca-de.html">Acerca de</a>
+      <a href="funcionalidades.html">Funcionalidades</a>
+      <a href="descargar.html">Descargar</a>
+      <a href="donar.html">Donar</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2026 Ashbis. Hecho con ❤️ en Chile.</div>
+  </div>
+</footer>
+
+
+<script>
+
+/* MENU */
+document.querySelector('.hamburger').onclick = () => {
+  document.querySelector('.mobile').classList.toggle('active');
+};
+
+/* FORM DINAMICO */
+const motivo = document.getElementById('motivo');
+const equipo = document.getElementById('equipoSection');
+const patro = document.getElementById('patroSection');
+const otro = document.getElementById('otroInput');
+
+motivo.addEventListener('change', () => {
+
+  equipo.style.display = 'none';
+  patro.style.display = 'none';
+  otro.style.display = 'none';
+
+  if(motivo.value === 'equipo') equipo.style.display = 'block';
+  if(motivo.value === 'patrocinador') patro.style.display = 'block';
+  if(motivo.value === 'otro') otro.style.display = 'block';
+
+});
+
+/* AREA DINAMICA */
+const area = document.getElementById('areaEquipo');
+const areaOtro = document.getElementById('areaOtroInput');
+const areaField = document.getElementById('areaOtroField');
+
+area.addEventListener('change', () => {
+  if(area.value === 'otro'){
+    areaOtro.style.display = 'block';
+    areaField.required = true;
+  } else {
+    areaOtro.style.display = 'none';
+    areaField.required = false;
+  }
+});
+
+</script>
+
+</body>
+</html>
