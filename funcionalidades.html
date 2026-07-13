@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<script>(function(){var t=localStorage.getItem('ashbis-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<script>document.documentElement.setAttribute('data-theme', matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funcionalidades | Ashbis</title>
 
@@ -55,7 +55,6 @@
       <ul class="desktop">
         <li><a href="acerca-de.html">Acerca de</a></li>
         <li><a href="funcionalidades.html">Funcionalidades</a></li>
-        <li><a href="descargar.html">Descargar</a></li>
         <li><a href="donar.html">Donar</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
@@ -63,15 +62,10 @@
       <ul class="mobile" id="mobileMenu">
         <li><a href="acerca-de.html">Acerca de</a></li>
         <li><a href="funcionalidades.html">Funcionalidades</a></li>
-        <li><a href="descargar.html">Descargar</a></li>
         <li><a href="donar.html">Donar</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
-      <span class="theme-icon-sun" aria-hidden="true">☀️</span>
-      <span class="theme-icon-moon" aria-hidden="true">🌙</span>
-    </button>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -400,7 +394,6 @@
 
 
 <!-- ===== SCRIPT ===== -->
-<script src="theme.js"></script>
 <script>
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
