@@ -2,208 +2,24 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ashbis-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acerca de | Ashbis</title>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="img/logo4.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BASE ===== */
-.about-page {
-  padding-top: 110px;
+.story-main a:hover {
+  background: #a80000 !important;
+  transform: translateY(-2px);
 }
 
-/* ===== HERO ===== */
-.about-hero {
-  text-align: center;
-  padding: 110px 6% 70px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-}
-
-.about-hero span {
-  color: var(--red);
-}
-
-.about-hero p {
-  color: var(--gray-light);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-/* ===== SECTION ===== */
-.about-section {
-  padding: 110px 6%;
-}
-
-/* ===== CARD ===== */
-.about-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-
-  max-width: 1100px;
-  margin: 0 auto;
-
-  padding: 40px;
-  border-radius: 28px;
-
-  background: linear-gradient(145deg, #0a0a0a, #070707);
-  border: 1px solid rgba(255,255,255,0.05);
-
-  transition: 0.35s ease;
-}
-
-/* Hover más elegante */
-.about-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(193,0,0,0.3);
-  box-shadow: 
-    0 20px 60px rgba(0,0,0,0.7),
-    0 0 40px rgba(193,0,0,0.1);
-}
-
-/* Reverse */
-.about-card.reverse {
-  direction: rtl;
-}
-.about-card.reverse * {
-  direction: ltr;
-}
-
-/* ===== TEXT ===== */
-.about-text h2 {
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  margin-bottom: 14px;
-}
-
-.about-text p {
-  color: var(--gray);
-  line-height: 1.8;
-}
-
-/* ===== MEDIA ===== */
-.about-media {
-  height: 320px;
-  border-radius: 22px;
-  overflow: hidden;
-  position: relative;
-
-  border: 1px solid rgba(255,255,255,0.06);
-
-  box-shadow: 
-    0 30px 60px rgba(0,0,0,0.6),
-    0 0 25px rgba(193,0,0,0.08);
-}
-
-.about-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s ease;
-}
-
-.about-card:hover img {
-  transform: scale(1.06);
-}
-
-/* ===== TEAM ===== */
-.team-section {
-  padding: 130px 6%;
-  text-align: center;
-}
-
-.team-section h2 {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  margin-bottom: 60px;
-}
-
-/* GRID */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 28px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* CARD */
-.team-card {
-  background: linear-gradient(145deg, #0a0a0a, #070707);
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.05);
-
-  transition: 0.35s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(193,0,0,0.4);
-  box-shadow: 
-    0 20px 40px rgba(0,0,0,0.6),
-    0 0 30px rgba(193,0,0,0.15);
-}
-
-/* IMAGE */
-.team-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: 0.4s;
-}
-
-.team-card:hover img {
-  transform: scale(1.08);
-}
-
-/* INFO */
-.team-info {
-  padding: 18px;
-}
-
-.team-info h3 {
-  color: var(--white);
-}
-
-.team-info p {
-  color: var(--gray);
-  font-size: 0.8rem;
-}
-
-/* ===== BOTONES (🔥 TEXTO BLANCO SIEMPRE) ===== */
-button,
-.apply-btn {
-  color: #ffffff !important;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-
-  .about-card {
-    grid-template-columns: 1fr;
-    padding: 25px;
-  }
-
-  .about-media {
-    height: 220px;
-  }
-
+@media (max-width: 600px) {
+  .story-main { padding: 110px 18px 60px !important; }
 }
 
 </style>
@@ -219,113 +35,110 @@ button,
     </a>
   </div>
 
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <div class="header-right">
+    <nav>
+      <ul class="desktop">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
+      </ul>
+      <ul class="mobile" id="mobileMenu">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
+      <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+      <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </div>
-
-  <nav>
-    <ul class="desktop">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
-    </ul>
-    <ul class="mobile" id="mobileMenu">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
 </header>
 
-<main class="about-page">
+<main class="story-main" style="max-width: 860px; margin: auto; padding: 140px 24px 80px;">
 
-<!-- HERO -->
-<section class="about-hero">
-  <h1>¿Qué es <span>Ashbis</span>?</h1>
-  <p>
-    Ashbis es la app que centraliza toda la información veterinaria de tus mascotas:
-    vacunas, citas, documentos y cuidados.
-  </p>
-</section>
-
-<!-- MISIÓN -->
-<section class="about-section">
-  <div class="about-card">
-    <div class="about-media">
-      <img src="img/13.jpg">
-    </div>
-
-    <div class="about-text">
-      <h2>Misión</h2>
-      <p>Facilitar el cuidado de mascotas mediante tecnología accesible y segura.</p>
-    </div>
+  <div style="text-align: center; margin-bottom: 60px;">
+    <span style="font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase;
+                 color: var(--red); font-family: var(--font-display);">Nuestra historia</span>
+    <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-family: var(--font-display);
+               font-weight: 800; margin-top: 12px; letter-spacing: -0.02em;">
+      Ashbis nació del amor<br>por <span style="color:var(--red)">Anubis y Asher</span>
+    </h1>
   </div>
-</section>
 
-<!-- VISIÓN -->
-<section class="about-section">
-  <div class="about-card reverse">
-    <div class="about-media">
-      <img src="img/11.jpg">
+  <div style="display:flex; flex-direction:column; gap:32px; font-size:1.05rem;
+              line-height:1.85; color: var(--gray-light);">
+
+    <p>
+      Ashbis es un juego de palabras que une los nombres de mis dos perros:
+      <strong style="color:var(--white)">Anubis</strong> y <strong style="color:var(--white)">Asher</strong>.
+      Ambos han marcado mi vida de una forma que nunca imaginé.
+    </p>
+
+    <p>
+      Anubis sufrió un corte grave en su pata cuando yo era solo una niña.
+      Mis padres nunca tuvieron mucho dinero, así que yo trabajaba en vacaciones
+      para costear sus vacunas y alimento — un trato con ellos para aprender responsabilidad.
+      Pero mis ahorros no alcanzaban para todo. Recorrimos varios centros veterinarios
+      hasta encontrar uno que nos atendió, que nos entendió, que priorizó la salud de Anubis
+      por sobre las cifras. Ese veterinario nos cambió la vida.
+    </p>
+
+    <p>
+      Con mi familia también rescatamos varios animalitos y les buscamos hogares.
+      En ese camino conocí dos tipos de profesionales: los que solo hablaban de precios,
+      y los que tenían vocación de verdad. Esa diferencia me quedó grabada para siempre.
+    </p>
+
+    <p>
+      Cuando Asher llegó a mi vida, jugando con Anubis se cayó de las escaleras.
+      No sabíamos qué hacer. Recorrimos muchos centros y ninguno nos daba una solución
+      que pudiéramos costear. Me pasé toda la noche pendiente, sin dormir,
+      cuidándolo para que no le pasara nada malo. Hoy Asher es un perro enorme,
+      sano y feliz que vive en el sur cuidando a mis abuelos.
+    </p>
+
+    <p>
+      A lo largo de sus vidas acumulé carnets de decenas de veterinarias distintas.
+      Cada vez que íbamos a una consulta tenía que llevar todos los papeles,
+      recordar qué vacuna se había puesto dónde, buscar entre hojas arrugadas
+      el resultado de un examen de hace dos años. Era agotador e innecesario.
+    </p>
+
+    <p style="font-size:1.1rem; color:var(--white); font-weight:500;
+              border-left: 3px solid var(--red); padding-left: 20px;">
+      Ashbis nació para conectar a las personas que darían todo por sus mascotas
+      con los profesionales que tienen vocación real. Y para hacerles la vida
+      veterinaria más simple, organizada y humana.
+    </p>
+
+    <p>
+      Somos un proyecto independiente, hecho con amor desde Chile.
+      Si Ashbis te ha ayudado o simplemente crees en lo que hacemos,
+      considera apoyarnos para seguir creciendo.
+    </p>
+
+    <div style="text-align:center; margin-top: 20px;">
+      <p style="color: var(--gray); font-size:0.9rem; margin-bottom: 20px;">
+        — Anii, fundadora de Ashbis 🐾
+      </p>
+      <a href="donar.html" style="display:inline-block; background: var(--red);
+         color:#fff; padding: 14px 32px; border-radius: 40px;
+         font-family: var(--font-display); font-weight:700; font-size:0.95rem;
+         transition: 0.25s;">
+        ❤️ Apoyar el proyecto
+      </a>
     </div>
 
-    <div class="about-text">
-      <h2>Visión</h2>
-      <p>Ser la plataforma líder en bienestar animal digital.</p>
-    </div>
   </div>
-</section>
-
-<!-- OBJETIVO -->
-<section class="about-section">
-  <div class="about-card">
-    <div class="about-media">
-      <img src="img/12.jpg">
-    </div>
-
-    <div class="about-text">
-      <h2>Objetivo</h2>
-      <p>Crear un ecosistema digital completo para el cuidado animal.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team-section">
-  <h2>Equipo</h2>
-
-  <div class="team-grid">
-    <div class="team-card">
-      <img src="img/logo4.png">
-      <div class="team-info">
-        <h3>Nombre</h3>
-        <p>Diseño</p>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="img/logo4.png">
-      <div class="team-info">
-        <h3>Nombre</h3>
-        <p>Frontend</p>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="img/logo4.png">
-      <div class="team-info">
-        <h3>Nombre</h3>
-        <p>Fullstack</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer>
@@ -348,6 +161,7 @@ button,
   </div>
 </footer>
 
+<script src="theme.js"></script>
 <script>
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile');

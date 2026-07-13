@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "ashbis-ae5b2"
+  },
+  "targets": {
+    "ashbis-ae5b2": {
+      "hosting": {
+        "web": [
+          "ashbis-web"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

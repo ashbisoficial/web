@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ashbis-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funcionalidades | Ashbis</title>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="img/logo4.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -14,7 +16,7 @@
 .features-page {
     padding-top: 100px;
     min-height: 100vh;
-    background: #000;
+    background: var(--black);
 }
 
 /* ===== HEADER ===== */
@@ -29,19 +31,21 @@
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #fff, #dcdcdc);
+    background: linear-gradient(135deg, var(--white), var(--gray-light));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
 .features-header h1 span {
-    background: linear-gradient(135deg, #E53935, #ff6b6b);
+    background: linear-gradient(135deg, var(--red), #ff6b6b);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
 .features-header p {
-    color: #a0a0a0;
+    color: var(--gray-light);
     font-size: 1.15rem;
 }
 
@@ -57,17 +61,17 @@
 
 /* ===== CARD ===== */
 .feature-card {
-    background: linear-gradient(145deg, #0a0a0a, #070707);
+    background: linear-gradient(145deg, var(--black-2), var(--black));
     border-radius: 28px;
     padding: 24px;
     transition: 0.4s;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(var(--edge-rgb),0.05);
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(229,57,53,0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border-color: rgba(var(--red-rgb),0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 /* IMAGE */
@@ -77,7 +81,7 @@
     border-radius: 18px;
     overflow: hidden;
     margin-bottom: 20px;
-    background: #111;
+    background: var(--black-3);
 }
 
 .feature-media img {
@@ -96,18 +100,18 @@
 .feature-card h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--white);
 }
 
 .feature-card p {
     font-size: 0.9rem;
-    color: #b0b0b0;
+    color: var(--gray-light);
     margin-bottom: 14px;
 }
 
 .feature-badge {
-    background: rgba(229,57,53,0.12);
-    color: #E53935;
+    background: var(--red-dim);
+    color: var(--red);
     padding: 5px 12px;
     border-radius: 30px;
     font-size: 0.7rem;
@@ -119,10 +123,10 @@
     margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: linear-gradient(135deg, #0a0a0a, #111);
+    background: linear-gradient(135deg, var(--black-2), var(--black-3));
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(229,57,53,0.25);
+    border: 1px solid rgba(var(--red-rgb),0.25);
 }
 
 .highlight-image img {
@@ -141,18 +145,19 @@
 .highlight-content h2 {
     font-size: 2rem;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #E53935, #ff6b6b);
+    background: linear-gradient(135deg, var(--red), #ff6b6b);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
 .highlight-content p {
-    color: #ccc;
+    color: var(--gray-light);
     margin-bottom: 20px;
 }
 
 .qr-badge {
-    background: #E53935;
+    background: var(--red);
     padding: 10px 24px;
     border-radius: 40px;
     font-size: 0.8rem;
@@ -185,6 +190,12 @@
     }
 }
 
+@media (max-width: 480px) {
+    .features-header { padding: 60px 16px 30px; }
+    .features-header h1 { font-size: 1.9rem; }
+    .feature-card { padding: 18px; }
+}
+
 </style>
 </head>
 
@@ -198,27 +209,32 @@
     </a>
   </div>
 
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <div class="header-right">
+    <nav>
+      <ul class="desktop">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
+      </ul>
+      <ul class="mobile" id="mobileMenu">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
+      <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+      <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </div>
-
-  <nav>
-    <ul class="desktop">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
-    </ul>
-    <ul class="mobile" id="mobileMenu">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
 </header>
 
 <!-- ===== MAIN ===== -->
@@ -329,6 +345,7 @@
 
 
 <!-- ===== SCRIPT ===== -->
+<script src="theme.js"></script>
 <script>
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');

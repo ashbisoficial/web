@@ -2,11 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ashbis-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashbis — La app para tu mascota</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/logo4.png">
 
 </head>
 <body>
@@ -19,28 +21,33 @@
     </a>
   </div>
 
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <div class="header-right">
+    <nav>
+      <ul class="desktop">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
+      </ul>
+      <ul class="mobile" id="mobileMenu">
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="descargar.html">Descargar</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
+      <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+      <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </div>
-<!--
-  <nav>
-    <ul class="desktop">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="descargar.html" class="nav-cta">↓ Descargar APK</a></li>
-    </ul>
-    <ul class="mobile" id="mobileMenu">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="funcionalidades.html">Funcionalidades</a></li>
-      <li><a href="descargar.html">Descargar</a></li>
-      <li><a href="donar.html">Donar</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>-->
-</header> 
+</header>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -89,16 +96,16 @@
 <div class="stats-bar reveal">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-number">+500</div>
-      <div class="stat-label">Mascotas registradas</div>
+      <div class="stat-number">Beta</div>
+      <div class="stat-label">Versión actual</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">+120</div>
-      <div class="stat-label">Usuarios activos</div>
+      <div class="stat-number">🇨🇱</div>
+      <div class="stat-label">Hecho en Chile</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">98%</div>
-      <div class="stat-label">Satisfacción</div>
+      <div class="stat-number">2026</div>
+      <div class="stat-label">Lanzamiento</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">100%</div>
@@ -207,12 +214,12 @@
     <h2>Ayúdanos a seguir<br>mejorando Ashbis</h2>
     <p>Ashbis es un proyecto independiente hecho con amor. Tus aportes voluntarios nos ayudan a mantener servidores, desarrollar nuevas funciones y seguir siendo 100% gratis.</p>
     <div class="donate-options">
-      <a href="donar.html" class="donate-opt primary">☕ Invítanos un cafecito</a>
-      <a href="donar.html" class="donate-opt">💳 Transferencia bancaria</a>
-      <a href="donar.html" class="donate-opt">🅿️ PayPal</a>
+      <a href="https://paypal.me/AshbisCL" target="_blank" class="donate-opt primary">🅿️ Donar con PayPal</a>
+      <div class="donate-opt disabled" style="opacity:0.4; cursor:not-allowed;">☕ Cafecito — Próximamente</div>
+      <div class="donate-opt disabled" style="opacity:0.4; cursor:not-allowed;">💳 Transferencia — Próximamente</div>
     </div>
   </div>
-</section>
+</section> 
 
 <!-- ===== FOOTER ===== -->
 <footer>
@@ -232,6 +239,7 @@
   </div>
 </footer>
 
+<script src="theme.js"></script>
 <script>
 // Header scroll
 const header = document.getElementById('header');
