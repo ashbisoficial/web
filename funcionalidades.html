@@ -12,188 +12,29 @@
 
 <style>
 
-/* ===== PAGE BASE ===== */
-.features-page {
-    padding-top: 100px;
-    min-height: 100vh;
-    background: var(--black);
+.features-main .feature-block {
+  transition: 0.3s;
+}
+.features-main .feature-block:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--red-rgb),0.3) !important;
 }
 
-/* ===== HEADER ===== */
-.features-header {
-    text-align: center;
-    padding: 80px 20px 40px;
-    max-width: 800px;
-    margin: 0 auto;
+.features-main .feature-sub {
+  transition: 0.25s;
+}
+.features-main .feature-sub:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--edge-rgb),0.15) !important;
 }
 
-.features-header h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--white), var(--gray-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.features-main a:hover {
+  background: #a80000 !important;
+  transform: translateY(-2px);
 }
 
-.features-header h1 span {
-    background: linear-gradient(135deg, var(--red), #ff6b6b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.features-header p {
-    color: var(--gray-light);
-    font-size: 1.15rem;
-}
-
-/* ===== GRID ===== */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 24px 60px;
-}
-
-/* ===== CARD ===== */
-.feature-card {
-    background: linear-gradient(145deg, var(--black-2), var(--black));
-    border-radius: 28px;
-    padding: 24px;
-    transition: 0.4s;
-    border: 1px solid rgba(var(--edge-rgb),0.05);
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(var(--red-rgb),0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-/* IMAGE */
-.feature-media {
-    width: 100%;
-    height: 160px;
-    border-radius: 18px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: var(--black-3);
-}
-
-.feature-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ICON */
-.feature-icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-/* TEXT */
-.feature-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-.feature-card p {
-    font-size: 0.9rem;
-    color: var(--gray-light);
-    margin-bottom: 14px;
-}
-
-.feature-badge {
-    background: var(--red-dim);
-    color: var(--red);
-    padding: 5px 12px;
-    border-radius: 30px;
-    font-size: 0.7rem;
-}
-
-/* ===== HIGHLIGHT ===== */
-.feature-highlight {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: linear-gradient(135deg, var(--black-2), var(--black-3));
-    border-radius: 32px;
-    overflow: hidden;
-    border: 1px solid rgba(var(--red-rgb),0.25);
-}
-
-.highlight-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.highlight-content {
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.highlight-content h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, var(--red), #ff6b6b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.highlight-content p {
-    color: var(--gray-light);
-    margin-bottom: 20px;
-}
-
-.qr-badge {
-    background: var(--red);
-    padding: 10px 24px;
-    border-radius: 40px;
-    font-size: 0.8rem;
-    color: #fff;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-    .features-header h1 {
-        font-size: 2.2rem;
-    }
-
-    .features-grid {
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .feature-media {
-        height: 140px;
-    }
-
-    .feature-highlight {
-        grid-template-columns: 1fr;
-    }
-
-    .highlight-content {
-        padding: 30px 20px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .features-header { padding: 60px 16px 30px; }
-    .features-header h1 { font-size: 1.9rem; }
-    .feature-card { padding: 18px; }
+@media (max-width: 600px) {
+  .features-main { padding: 110px 18px 60px !important; }
 }
 
 </style>
@@ -238,90 +79,304 @@
 </header>
 
 <!-- ===== MAIN ===== -->
-<main class="features-page">
+<main class="features-main" style="max-width: 1000px; margin: auto; padding: 140px 24px 80px;">
 
-<!-- HEADER -->
-<div class="features-header">
-    <h1>Todo lo que tu mascota <span>necesita</span></h1>
-    <p>Centraliza, protege y conecta todo el cuidado de tu mascota en una sola app.</p>
-</div>
+  <!-- HERO -->
+  <div style="text-align: center; margin-bottom: 70px;">
+    <span style="font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase;
+                 color: var(--red); font-family: var(--font-display);">Funcionalidades</span>
+    <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-family: var(--font-display);
+               font-weight: 800; margin-top: 12px; letter-spacing: -0.02em; color: var(--text-primary);">
+      Todo lo que Ashbis<br>hace por <span style="color:var(--red)">tu mascota</span>
+    </h1>
+    <p style="color: var(--gray); margin-top: 16px; font-size: 1.05rem;
+              max-width: 600px; margin-inline: auto; line-height: 1.7;">
+      Cada funcionalidad fue pensada desde la experiencia real de ser dueño de mascotas
+      en Chile. Nada está de adorno.
+    </p>
+  </div>
 
-<!-- GRID -->
-<div class="features-grid">
+  <!-- FUNCIONALIDADES -->
+  <div style="display: flex; flex-direction: column; gap: 32px;">
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/1.jpg" alt="">
+    <!-- 1. PERFIL -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">📋</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Perfil completo de tu mascota</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">📋</div>
-        <h3>Perfil completo</h3>
-        <p>Información detallada de tu mascota en un solo lugar.</p>
-        <span class="feature-badge">Organización total</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Crea un perfil detallado para cada una de tus mascotas: nombre, especie, raza,
+        fecha de nacimiento, sexo, peso, color, número de microchip y señas particulares.
+        También puedes registrar su personalidad, comportamiento con otros animales y personas,
+        y agregar una galería de fotos.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        Cuando llevas a tu mascota a una veterinaria nueva, el profesional no sabe nada sobre ella.
+        Tener toda la información básica organizada y disponible en segundos evita errores,
+        ahorra tiempo y da contexto al veterinario desde el primer momento.
+      </p>
     </div>
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/2.jpg" alt="">
+    <!-- 2. HISTORIAL MÉDICO -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">🏥</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Historial médico digital</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">🏥</div>
-        <h3>Historial médico</h3>
-        <p>Vacunas, tratamientos y controles siempre accesibles.</p>
-        <span class="feature-badge">Sin papeles</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Registra y consulta el historial médico completo de tu mascota: vacunas aplicadas
+        con fechas y próximas dosis, medicamentos activos y tratamientos anteriores,
+        exámenes de laboratorio o imágenes, procedimientos quirúrgicos, diagnósticos,
+        citas veterinarias pasadas y futuras, y documentos digitales como carnets y resultados.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        La fundadora de Ashbis acumuló carnets de docenas de veterinarias distintas a lo largo
+        de la vida de sus perros. Cada consulta implicaba buscar entre papeles arrugados,
+        recordar fechas de vacunas y cargar con documentos que podían perderse.
+        Ashbis reemplaza toda esa pila de papeles con un historial digital, ordenado,
+        siempre disponible y nunca se pierde.
+      </p>
     </div>
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/7.jpg" alt="">
+    <!-- 3. QR EMERGENCIA -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid rgba(193,0,0,0.3);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">📱</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">QR de emergencia</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            ⭐ Función estrella · Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">📱</div>
-        <h3>QR en el collar</h3>
-        <p>Recupera a tu mascota rápidamente si se pierde.</p>
-        <span class="feature-badge">⭐ Anti-pérdida</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Genera un código QR único para el collar de tu mascota. Si alguien la encuentra perdida
+        y escanea el código, accede instantáneamente a una página pública con tu nombre,
+        teléfono de contacto, alertas médicas críticas (alergias, enfermedades crónicas,
+        medicamentos activos) y comportamiento. No requiere que la persona tenga la app instalada
+        — funciona desde cualquier cámara de celular.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem; margin-bottom: 16px;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        Cada año miles de mascotas se pierden en Chile. Un collar con nombre y teléfono
+        puede borrarse o dañarse. El QR de Ashbis es dinámico — si cambias tu número,
+        el QR sigue funcionando con los datos actualizados, sin necesidad de imprimir uno nuevo.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">QR médico:</strong> además del QR de emergencia,
+        Ashbis genera un segundo QR con acceso al historial médico completo.
+        Ideal para compartir con un veterinario nuevo o en una urgencia donde
+        no puedes explicar todo verbalmente.
+      </p>
     </div>
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/4.jpg" alt="">
+    <!-- 4. MAPA -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">🗺️</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Mapa veterinario</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">🗺️</div>
-        <h3>Mapa veterinario</h3>
-        <p>Encuentra atención cercana en segundos.</p>
-        <span class="feature-badge">Emergencias</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Encuentra veterinarias y tiendas de mascotas cercanas a tu ubicación actual
+        en un radio de 5 km. Los datos vienen de Google Places, lo que garantiza
+        información actualizada, horarios reales y reseñas de otros usuarios.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        En una urgencia veterinaria, cada minuto cuenta. No tener que buscar en Google,
+        abrir mapas y filtrar resultados puede marcar la diferencia.
+        Ashbis te muestra directamente las opciones más cercanas sin salir de la app.
+      </p>
     </div>
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/5.jpg" alt="">
+    <!-- 5. DOCUMENTOS -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">📄</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Documentos digitales</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">🔄</div>
-        <h3>Sincronización vet</h3>
-        <p>Registro automático de consultas veterinarias.</p>
-        <span class="feature-badge">Próximamente</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Sube y guarda fotos o PDFs de carnets de vacunación, resultados de exámenes,
+        ecografías, radiografías, recetas y cualquier documento veterinario.
+        Todo almacenado de forma segura en la nube y accesible desde cualquier dispositivo.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        Los documentos en papel se pierden, se mojan, se olvidan en casa justo cuando más los necesitas.
+        Tener los exámenes de tu mascota en el celular significa que siempre los llevas contigo,
+        sin excusas.
+      </p>
     </div>
 
-    <div class="feature-card">
-        <div class="feature-media">
-            <img src="img/6.jpg" alt="">
+    <!-- 6. CHAT IA -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">🤖</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Asistente IA para mascotas</h2>
+          <span style="font-size: 0.75rem; background: rgba(193,0,0,0.12); color: var(--red);
+                       padding: 3px 10px; border-radius: 20px; margin-top: 4px; display: inline-block;">
+            Disponible ahora
+          </span>
         </div>
-        <div class="feature-icon">📄</div>
-        <h3>Documentos digitales</h3>
-        <p>Todo almacenado de forma segura en la nube.</p>
-        <span class="feature-badge">Seguro</span>
+      </div>
+      <p style="color: var(--gray-light); line-height: 1.8; margin-bottom: 16px;">
+        Chat inteligente especializado en mascotas, disponible las 24 horas.
+        Puedes preguntar sobre síntomas, cuidados, alimentación, comportamiento,
+        primeros auxilios y dudas generales sobre la salud de tu animal.
+        Responde en segundos, sin tiempos de espera ni costo adicional.
+      </p>
+      <p style="color: var(--gray); line-height: 1.8; font-size: 0.95rem;">
+        <strong style="color: var(--gray-light);">¿Por qué está en Ashbis?</strong>
+        A las 3 de la mañana cuando tu mascota vomita o se comporta raro,
+        no puedes llamar al veterinario. El asistente IA te ayuda a evaluar
+        si es una emergencia real o si puede esperar hasta el día siguiente,
+        y te orienta sobre qué hacer mientras tanto.
+        No reemplaza al veterinario — lo complementa.
+      </p>
     </div>
 
-</div>
+    <!-- 7. PRÓXIMAMENTE -->
+    <div class="feature-block" style="background: var(--card-bg); border-radius: 24px; padding: 36px;
+                border: 1px solid var(--border); opacity: 0.8;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <span style="font-size: 2.4rem;">🚀</span>
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.3rem;
+                     color: var(--text-primary); margin: 0;">Lo que viene</h2>
+          <span style="font-size: 0.75rem; background: rgba(var(--edge-rgb),0.06);
+                       color: var(--gray); padding: 3px 10px; border-radius: 20px;
+                       margin-top: 4px; display: inline-block;">
+            Próximamente
+          </span>
+        </div>
+      </div>
 
-<!-- HIGHLIGHT -->
-<div class="feature-highlight">
-    <div class="highlight-image">
-        <img src="img/8.jpg" alt="">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                  gap: 16px;">
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">🔔</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">Recordatorios automáticos</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Notificaciones antes de cada vacuna, control o medicamento programado.
+            Nunca más olvides una dosis.
+          </p>
+        </div>
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">🏥</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">Portal veterinario</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Los veterinarios podrán acceder al historial del paciente con autorización
+            y registrar consultas directamente en la app.
+          </p>
+        </div>
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">🏠</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">Modo refugio</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Herramientas especiales para refugios y fundaciones que rescatan
+            y buscan hogares para animales.
+          </p>
+        </div>
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">📅</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">Calendario de salud</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Vista unificada de citas, vacunas, medicamentos y controles
+            de todas tus mascotas en un solo calendario.
+          </p>
+        </div>
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">🍎</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">App para iOS</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Ashbis llegará a iPhone próximamente,
+            con la misma experiencia que en Android.
+          </p>
+        </div>
+
+        <div class="feature-sub" style="padding: 20px; background: rgba(var(--edge-rgb),0.03);
+                    border-radius: 16px; border: 1px solid var(--border);">
+          <div style="font-size: 1.6rem; margin-bottom: 8px;">🌎</div>
+          <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                     color: var(--text-primary); margin-bottom: 6px;">Expansión LATAM</h3>
+          <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+            Ashbis nació en Chile pero está pensado para toda Latinoamérica.
+            Expansión regional en camino.
+          </p>
+        </div>
+
+      </div>
     </div>
-    <div class="highlight-content">
-        <h2>🐾 QR Anti-pérdida</h2>
-        <p>Un sistema simple que puede salvar la vida de tu mascota. Acceso inmediato a tu información si alguien la encuentra.</p>
-        <div class="qr-badge">Tranquilidad 24/7</div>
-    </div>
-</div>
+
+  </div>
+
+  <!-- CTA FINAL -->
+  <div style="text-align:center; margin-top: 70px;">
+    <p style="color: var(--gray); margin-bottom: 24px; font-size: 1rem;">
+      ¿Listo para probar Ashbis?
+    </p>
+    <a href="descargar.html" style="background: var(--red); color: white;
+       padding: 16px 40px; border-radius: 40px; font-family: var(--font-display);
+       font-weight: 700; font-size: 1rem; display: inline-block; transition: 0.25s;">
+      ↓ Descargar APK gratis
+    </a>
+  </div>
 
 </main>
 

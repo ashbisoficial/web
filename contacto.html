@@ -300,9 +300,10 @@ area.addEventListener('change', () => {
   }
 });
 
-/* ENVIO FORMSPREE */
+/* ENVIO: Formspree (respaldo por correo) + Cloud Function (notificación a Discord) */
 const form = document.querySelector('.contact-form');
 const success = document.getElementById('form-success');
+const CF_URL = 'https://us-central1-ashbis-ae5b2.cloudfunctions.net/contactFormProxy';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -311,11 +312,32 @@ form.addEventListener('submit', async (e) => {
   btn.textContent = 'Enviando...';
   btn.disabled = true;
 
+  const data = new FormData(form);
+
   try {
-    const res = await fetch(form.action, {
+    // Formspree: respaldo por correo, no bloquea el flujo si falla
+    fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: data,
       headers: { 'Accept': 'application/json' }
+    }).catch(() => {});
+
+    // Cloud Function: notificación a Discord (webhook nunca sale del servidor)
+    const res = await fetch(CF_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre: data.get('nombre'),
+        email: data.get('email'),
+        motivo: data.get('motivo'),
+        mensaje: data.get('mensaje'),
+        area: data.get('area_equipo'),
+        otro_motivo: data.get('otro_motivo'),
+        area_otro: data.get('area_otro'),
+        tipo_patro: data.get('tipo_patro'),
+        nombre_patro: data.get('nombre_patro'),
+        cv: data.get('cv')
+      })
     });
 
     if (res.ok) {

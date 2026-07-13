@@ -19,6 +19,11 @@
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
+  /* Aliases used by page content */
+  --text-primary: var(--white);
+  --card-bg: var(--black-2);
+  --border: rgba(var(--edge-rgb), 0.08);
+
   color-scheme: dark;
 }
 

@@ -13,10 +13,18 @@
 
 <style>
 
-.story-main a:hover {
+.story-main .cta-primary:hover {
   background: #a80000 !important;
   transform: translateY(-2px);
 }
+
+.story-main .cta-secondary:hover {
+  background: rgba(var(--edge-rgb),0.05);
+  border-color: rgba(var(--edge-rgb),0.25) !important;
+  transform: translateY(-2px);
+}
+
+.story-main a { transition: 0.25s; }
 
 @media (max-width: 600px) {
   .story-main { padding: 110px 18px 60px !important; }
@@ -65,22 +73,28 @@
 
 <main class="story-main" style="max-width: 860px; margin: auto; padding: 140px 24px 80px;">
 
-  <div style="text-align: center; margin-bottom: 60px;">
+  <!-- HERO -->
+  <div style="text-align: center; margin-bottom: 70px;">
     <span style="font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase;
                  color: var(--red); font-family: var(--font-display);">Nuestra historia</span>
     <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-family: var(--font-display);
-               font-weight: 800; margin-top: 12px; letter-spacing: -0.02em;">
+               font-weight: 800; margin-top: 12px; letter-spacing: -0.02em; color: var(--text-primary);">
       Ashbis nació del amor<br>por <span style="color:var(--red)">Anubis y Asher</span>
     </h1>
+    <p style="color: var(--gray); margin-top: 16px; font-size: 1.05rem; max-width: 600px; margin-inline: auto; line-height: 1.7;">
+      Una app hecha por una dueña de mascotas, para todos los que darían todo por las suyas.
+    </p>
   </div>
 
-  <div style="display:flex; flex-direction:column; gap:32px; font-size:1.05rem;
+  <!-- HISTORIA -->
+  <div style="display:flex; flex-direction:column; gap:28px; font-size:1.05rem;
               line-height:1.85; color: var(--gray-light);">
 
     <p>
-      Ashbis es un juego de palabras que une los nombres de mis dos perros:
-      <strong style="color:var(--white)">Anubis</strong> y <strong style="color:var(--white)">Asher</strong>.
-      Ambos han marcado mi vida de una forma que nunca imaginé.
+      <strong style="color:var(--text-primary)">Ashbis</strong> es un juego de palabras que une los nombres de mis dos perros:
+      <strong style="color:var(--text-primary)">Anubis</strong> y <strong style="color:var(--text-primary)">Asher</strong>.
+      Dos compañeros que me enseñaron más sobre responsabilidad, amor y resiliencia
+      de lo que cualquier libro podría haberlo hecho.
     </p>
 
     <p>
@@ -88,8 +102,8 @@
       Mis padres nunca tuvieron mucho dinero, así que yo trabajaba en vacaciones
       para costear sus vacunas y alimento — un trato con ellos para aprender responsabilidad.
       Pero mis ahorros no alcanzaban para todo. Recorrimos varios centros veterinarios
-      hasta encontrar uno que nos atendió, que nos entendió, que priorizó la salud de Anubis
-      por sobre las cifras. Ese veterinario nos cambió la vida.
+      hasta encontrar uno que nos atendió de verdad, que nos entendió, que priorizó
+      la salud de Anubis por sobre las cifras. Ese veterinario nos cambió la vida.
     </p>
 
     <p>
@@ -102,43 +116,188 @@
       Cuando Asher llegó a mi vida, jugando con Anubis se cayó de las escaleras.
       No sabíamos qué hacer. Recorrimos muchos centros y ninguno nos daba una solución
       que pudiéramos costear. Me pasé toda la noche pendiente, sin dormir,
-      cuidándolo para que no le pasara nada malo. Hoy Asher es un perro enorme,
-      sano y feliz que vive en el sur cuidando a mis abuelos.
+      cuidándolo para que no le pasara nada malo.
+      Hoy Asher es un perro enorme, sano y feliz que vive en el sur cuidando a mis abuelos.
     </p>
 
-    <p>
-      A lo largo de sus vidas acumulé carnets de decenas de veterinarias distintas.
-      Cada vez que íbamos a una consulta tenía que llevar todos los papeles,
-      recordar qué vacuna se había puesto dónde, buscar entre hojas arrugadas
-      el resultado de un examen de hace dos años. Era agotador e innecesario.
-    </p>
-
-    <p style="font-size:1.1rem; color:var(--white); font-weight:500;
-              border-left: 3px solid var(--red); padding-left: 20px;">
-      Ashbis nació para conectar a las personas que darían todo por sus mascotas
-      con los profesionales que tienen vocación real. Y para hacerles la vida
-      veterinaria más simple, organizada y humana.
-    </p>
-
-    <p>
-      Somos un proyecto independiente, hecho con amor desde Chile.
-      Si Ashbis te ha ayudado o simplemente crees en lo que hacemos,
-      considera apoyarnos para seguir creciendo.
-    </p>
-
-    <div style="text-align:center; margin-top: 20px;">
-      <p style="color: var(--gray); font-size:0.9rem; margin-bottom: 20px;">
-        — Anii, fundadora de Ashbis 🐾
+    <!-- QUOTE -->
+    <blockquote style="border-left: 3px solid var(--red); padding: 20px 24px;
+                       margin: 12px 0; background: var(--card-bg); border-radius: 0 16px 16px 0;">
+      <p style="font-size:1.1rem; color:var(--text-primary); font-weight:500; margin:0; line-height:1.7;">
+        "A lo largo de sus vidas acumulé carnets de docenas de veterinarias distintas.
+        Cada consulta implicaba buscar entre hojas arrugadas, recordar qué vacuna se había
+        puesto dónde, cargar con papeles que podían perderse en cualquier momento.
+        Era agotador e innecesario."
       </p>
-      <a href="donar.html" style="display:inline-block; background: var(--red);
-         color:#fff; padding: 14px 32px; border-radius: 40px;
-         font-family: var(--font-display); font-weight:700; font-size:0.95rem;
-         transition: 0.25s;">
-        ❤️ Apoyar el proyecto
-      </a>
-    </div>
+      <cite style="display:block; margin-top:12px; font-size:0.85rem; color:var(--gray);">
+        — Anii, fundadora de Ashbis
+      </cite>
+    </blockquote>
+
+    <p>
+      Ashbis nació de esa frustración real y de una convicción profunda:
+      <strong style="color:var(--text-primary)">conectar a las personas que darían todo por sus mascotas
+      con los profesionales que tienen vocación real.</strong>
+      Y hacer que la vida veterinaria sea más simple, organizada y humana para todos.
+    </p>
 
   </div>
+
+  <!-- QUÉ ES ASHBIS HOY -->
+  <div style="margin-top: 70px;">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem);
+               font-weight: 800; margin-bottom: 32px; color: var(--text-primary);">
+      ¿Qué es Ashbis hoy?
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">📋</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Historial médico digital</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Vacunas, medicamentos, exámenes, citas y documentos. Todo en un solo lugar,
+          siempre disponible, sin papeles.
+        </p>
+      </div>
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">📱</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">QR de emergencia</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Código único para el collar. Si alguien encuentra a tu mascota,
+          escanea y accede a tus datos de contacto y alertas médicas al instante.
+        </p>
+      </div>
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🗺️</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Mapa veterinario</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Veterinarias y tiendas cercanas con datos reales de Google Maps.
+          Atención rápida cuando más lo necesitas.
+        </p>
+      </div>
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🔒</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Privacidad y seguridad</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Tus datos son tuyos. Acceso protegido, cifrado en tránsito y
+          cumplimiento de la Ley 19.628 de protección de datos de Chile.
+        </p>
+      </div>
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🤖</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Asistente IA</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Chat inteligente especializado en mascotas para resolver dudas rápidas
+          sobre salud, cuidado y comportamiento.
+        </p>
+      </div>
+
+      <div style="background: var(--card-bg); border-radius: 20px; padding: 28px;
+                  border: 1px solid var(--border); border-color: rgba(193,0,0,0.3);">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🚀</div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Próximamente</h3>
+        <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
+          Plataforma para veterinarios, modo refugio, notificaciones de vacunas,
+          calendario de salud y mucho más en camino.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VALORES -->
+  <div style="margin-top: 70px; text-align: center;">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem);
+               font-weight: 800; margin-bottom: 40px; color: var(--text-primary);">
+      Lo que nos mueve
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+
+      <div style="padding: 28px 20px;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">❤️</div>
+        <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Vocación</h3>
+        <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+          Creemos en los profesionales que priorizan la salud del animal por sobre las cifras.
+        </p>
+      </div>
+
+      <div style="padding: 28px 20px;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">🤝</div>
+        <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Accesibilidad</h3>
+        <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+          El cuidado veterinario organizado no debería ser un privilegio.
+          Ashbis es y será gratis.
+        </p>
+      </div>
+
+      <div style="padding: 28px 20px;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">🐾</div>
+        <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Empatía</h3>
+        <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+          Entendemos lo que sientes cuando tu mascota está enferma.
+          Estuvimos ahí.
+        </p>
+      </div>
+
+      <div style="padding: 28px 20px;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">🇨🇱</div>
+        <h3 style="font-family: var(--font-display); font-size: 0.95rem;
+                   margin-bottom: 8px; color: var(--text-primary);">Hecho en Chile</h3>
+        <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">
+          Un proyecto independiente, construido desde Santiago
+          para toda Latinoamérica.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div style="text-align:center; margin-top: 70px; padding: 50px 30px;
+              background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border);">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem);
+               font-weight: 800; margin-bottom: 16px; color: var(--text-primary);">
+      Únete al beta de Ashbis
+    </h2>
+    <p style="color: var(--gray); margin-bottom: 32px; max-width: 500px;
+              margin-inline: auto; line-height: 1.7;">
+      Somos un proyecto en crecimiento. Tu feedback en esta etapa es invaluable
+      para construir la app que las mascotas y sus dueños merecen.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="descargar.html" class="cta-primary" style="background: var(--red); color: white;
+         padding: 14px 32px; border-radius: 40px; font-family: var(--font-display);
+         font-weight: 700; font-size: 0.95rem; display: inline-block;">
+        ↓ Descargar APK
+      </a>
+      <a href="contacto.html" class="cta-secondary" style="border: 1px solid var(--border); color: var(--text-primary);
+         padding: 14px 32px; border-radius: 40px; font-family: var(--font-display);
+         font-weight: 600; font-size: 0.95rem; display: inline-block;">
+        Contáctanos →
+      </a>
+    </div>
+  </div>
+
 </main>
 
 <footer>
