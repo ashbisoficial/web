@@ -876,6 +876,7 @@ footer {
 
 .footer-logo img {
   height: 38px;
+  width: auto;
   opacity: 0.85;
 }
 
