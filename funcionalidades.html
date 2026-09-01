@@ -5,9 +5,14 @@
 <script>document.documentElement.setAttribute('data-theme', matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funcionalidades | Ashbis</title>
+<meta name="description" content="Descubre todo lo que Ashbis hace por tu mascota: perfil completo, historial médico digital, QR de emergencia, mapa veterinario y asistente IA.">
+<meta name="theme-color" content="#201e1f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
 
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="img/logo4.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -43,12 +48,13 @@
 </head>
 
 <body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
 
 <!-- ===== HEADER ===== -->
 <header id="header">
   <div class="logo">
     <a href="index.html">
-      <img src="img/logo4.png" alt="Ashbis Logo">
+      <img src="img/logo4.png" width="500" height="500" alt="Ashbis Logo">
     </a>
   </div>
 
@@ -68,14 +74,14 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <div class="hamburger" id="hamburger">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </header>
 
 <!-- ===== MAIN ===== -->
-<main class="features-main" style="max-width: 1000px; margin: auto; padding: 140px 24px 80px;">
+<main id="main" class="features-main" style="max-width: 1000px; margin: auto; padding: 140px 24px 80px;">
 
   <!-- HERO -->
   <div style="text-align: center; margin-bottom: 70px;">
@@ -380,7 +386,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="img/logo4.png" alt="">
+      <img src="img/logo4.png" width="500" height="500" alt="">
     </div>
     <div class="footer-links">
       <a href="acerca-de.html">Acerca de</a>
@@ -388,7 +394,7 @@
       <a href="descargar.html">Descargar</a>
       <a href="donar.html">Donar</a>
       <a href="contacto.html">Contacto</a>
-      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
+      <a href="https://www.instagram.com/ashbis_oficial/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="footer-copy">© 2026 Ashbis. Hecho con <svg class="icon-svg" style="width:1em;height:1em;color:currentColor;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg> en Chile.</div>
   </div>
@@ -401,8 +407,9 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
+  const abierto = hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', String(abierto));
 });
 </script>
 

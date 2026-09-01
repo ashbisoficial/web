@@ -5,10 +5,15 @@
 <script>document.documentElement.setAttribute('data-theme', matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acerca de | Ashbis</title>
+<meta name="description" content="Conoce la historia detrás de Ashbis, la app para mascotas nacida en Chile, y los valores que la mueven: vocación, accesibilidad y empatía.">
+<meta name="theme-color" content="#201e1f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
 
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="img/logo4.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -34,12 +39,13 @@
 </head>
 
 <body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
 
 <!-- ===== HEADER ===== -->
 <header id="header">
   <div class="logo">
     <a href="index.html">
-      <img src="img/logo4.png" alt="Ashbis Logo">
+      <img src="img/logo4.png" width="500" height="500" alt="Ashbis Logo">
     </a>
   </div>
 
@@ -59,13 +65,13 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <div class="hamburger" id="hamburger">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </header>
 
-<main class="story-main" style="max-width: 860px; margin: auto; padding: 140px 24px 80px;">
+<main id="main" class="story-main" style="max-width: 860px; margin: auto; padding: 140px 24px 80px;">
 
   <!-- HERO -->
   <div style="text-align: center; margin-bottom: 70px;">
@@ -297,7 +303,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="img/logo4.png">
+      <img src="img/logo4.png" width="500" height="500" alt="">
     </div>
 
     <div class="footer-links">
@@ -319,7 +325,9 @@ const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile');
 
 hamburger.addEventListener('click', () => {
+  const abierto = hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', String(abierto));
 });
 </script>
 
