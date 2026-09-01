@@ -13,19 +13,21 @@
 <style>
 
 .features-main .feature-block {
-  transition: 0.3s;
+  transition: transform 0.35s var(--ease-guardian), border-color 0.3s, box-shadow 0.35s var(--ease-guardian);
 }
 .features-main .feature-block:hover {
   transform: translateY(-4px);
   border-color: rgba(var(--red-rgb),0.3) !important;
+  box-shadow: 0 16px 32px rgba(var(--red-rgb),0.1);
 }
 
 .features-main .feature-sub {
-  transition: 0.25s;
+  transition: transform 0.3s var(--ease-guardian), border-color 0.3s, box-shadow 0.3s var(--ease-guardian);
 }
 .features-main .feature-sub:hover {
   transform: translateY(-3px);
   border-color: rgba(var(--edge-rgb),0.15) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 .features-main a:hover {

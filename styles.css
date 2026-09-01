@@ -741,6 +741,19 @@ ul.mobile li a {
   text-align: center;
 }
 
+/* Tarjeta genérica reutilizable (grillas de contenido en acerca-de.html,
+   funcionalidades.html): reposo plano, en hover se eleva levemente y gana
+   una sombra tenue en rojo guardián — profundidad de marca en vez de una
+   sombra negra genérica. */
+.info-card {
+  transition: transform 0.35s var(--ease-guardian), border-color 0.3s, box-shadow 0.35s var(--ease-guardian);
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--red-rgb),0.3) !important;
+  box-shadow: 0 16px 32px rgba(var(--red-rgb),0.1);
+}
+
 .donate-card {
   background: var(--black-2);
   border-radius: 32px;
@@ -748,10 +761,13 @@ ul.mobile li a {
   padding: 60px 5%;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.35s var(--ease-guardian);
 }
 
-.donate-card:hover { border-color: rgba(var(--red-rgb),0.45); }
+.donate-card:hover {
+  border-color: rgba(var(--red-rgb),0.45);
+  box-shadow: 0 20px 50px rgba(var(--red-rgb),0.12);
+}
 
 .donate-card .heart-icon { width: 3rem; height: 3rem; color: var(--red); display: block; margin: 0 auto 1.2rem; }
 
