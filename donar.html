@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="img/logo4.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -29,7 +29,7 @@
 .donate-hero h1 {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 20px;
     color: var(--white);
 }
@@ -68,13 +68,18 @@
 
 .donate-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(193,0,0,0.4);
-    box-shadow: 0 20px 40px rgba(193,0,0,0.15);
+    border-color: rgba(var(--red-rgb),0.4);
+    box-shadow: 0 20px 40px rgba(var(--red-rgb),0.15);
 }
 
 .donate-card h3 {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
+    font-weight: 700;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .donate-card p {
@@ -91,12 +96,20 @@
     padding: 12px 22px;
     border-radius: 40px;
     font-size: 0.85rem;
+    font-family: var(--font-body);
     font-weight: 600;
+    border: none;
+    cursor: pointer;
     transition: 0.25s;
 }
 
+.donate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .donate-btn:hover {
-    background: #a80000;
+    background: var(--red);
     transform: translateY(-2px);
 }
 
@@ -110,15 +123,17 @@
 /* ===== FEATURE SECTION ===== */
 .donate-highlight {
     margin-top: 80px;
-    background: linear-gradient(135deg, var(--black-2), var(--black-3));
+    background: var(--black-2);
     border-radius: 32px;
     padding: 50px 30px;
     text-align: center;
-    border: 1px solid rgba(193,0,0,0.2);
+    border: 1px solid rgba(var(--red-rgb),0.2);
+    border-top: 2px solid var(--red);
 }
 
 .donate-highlight h2 {
     font-family: var(--font-display);
+    font-weight: 900;
     margin-bottom: 15px;
     color: var(--white);
 }
@@ -152,6 +167,7 @@
 
 .donate-thanks h2 {
     font-family: var(--font-display);
+    font-weight: 900;
     margin-bottom: 10px;
     color: var(--white);
 }
@@ -228,30 +244,30 @@
 
             <!-- PayPal -->
             <div class="donate-card">
-                <h3>🅿️ PayPal</h3>
+                <h3><svg class="icon-svg" style="width:1.1em;height:1.1em;color:currentColor;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></svg> PayPal</h3>
                 <p>Donación rápida y segura</p>
                 <a href="https://paypal.me/AshbisCL" target="_blank" class="donate-btn">Donar</a>
             </div>
 
             <!-- Ko-fi -->
             <div class="donate-card" style="opacity:0.4;">
-                <h3>☕ Cafecito</h3>
+                <h3><svg class="icon-svg" style="width:1.1em;height:1.1em;color:currentColor;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2" /><path d="M14 2v2" /><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /><path d="M6 2v2" /></svg> Cafecito</h3>
                 <p>Próximamente</p>
-                <span class="donate-btn" style="cursor:not-allowed;">Próximamente</span>
+                <button type="button" class="donate-btn" disabled>Próximamente</button>
             </div>
 
             <!-- Banco -->
             <div class="donate-card" style="opacity:0.4;">
-                <h3>💳 Transferencia</h3>
+                <h3><svg class="icon-svg" style="width:1.1em;height:1.1em;color:currentColor;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2" /><line x1="2" x2="22" y1="10" y2="10" /></svg> Transferencia</h3>
                 <p>Próximamente</p>
-                <span class="donate-btn" style="cursor:not-allowed;">Próximamente</span>
+                <button type="button" class="donate-btn" disabled>Próximamente</button>
             </div>
 
         </div>
 
         <!-- DESTACADO -->
         <div class="donate-highlight">
-            <h2>💡 Cada aporte importa</h2>
+            <h2 style="display:flex;align-items:center;justify-content:center;gap:10px;"><svg class="icon-svg" style="width:0.9em;height:0.9em;color:var(--gold);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg> Cada aporte importa</h2>
             <p>
                 Desde mejoras en la app hasta servidores y nuevas funciones,
                 tu apoyo hace posible que Ashbis siga creciendo.
@@ -265,7 +281,7 @@
 
         <!-- GRACIAS -->
         <div class="donate-thanks">
-            <h2>❤️ Gracias por confiar</h2>
+            <h2 style="display:flex;align-items:center;justify-content:center;gap:10px;"><svg class="icon-svg" style="width:0.9em;height:0.9em;color:var(--red);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg> Gracias por confiar</h2>
             <p>
                 Cada donación nos acerca a construir una mejor experiencia
                 para todos los dueños de mascotas.
@@ -290,7 +306,7 @@
       <a href="contacto.html">Contacto</a>
       <a href="https://www.instagram.com/ashbis_oficial/" target="_blank">Instagram</a>
     </div>
-    <div class="footer-copy">© 2026 Ashbis. Hecho con ❤️ en Chile.</div>
+    <div class="footer-copy">© 2026 Ashbis. Hecho con <svg class="icon-svg" style="width:1em;height:1em;color:currentColor;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg> en Chile.</div>
   </div>
 </footer>
 
