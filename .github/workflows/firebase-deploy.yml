@@ -1,0 +1,26 @@
+name: Deploy a Firebase
+
+# Se dispara solo con cambios en main (o a mano desde la pestaña "Actions"
+# de GitHub, con el botón "Run workflow" — sirve para reintentar un deploy
+# sin necesitar un push nuevo). Requiere el secret FIREBASE_SERVICE_ACCOUNT
+# configurado en Settings → Secrets and variables → Actions del repo.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    name: Deploy hosting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Deploy a Firebase Hosting (target "web" → sitio ashbis-web, ver .firebaserc)
+        uses: w9jds/firebase-action@v15.26.0
+        with:
+          args: deploy --only hosting --non-interactive
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_ID: ashbis-ae5b2
