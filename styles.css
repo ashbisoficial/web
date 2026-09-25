@@ -745,6 +745,28 @@ ul.mobile li a {
 .play-btn .label { font-size: 0.72rem; font-weight: 500; display: block; }
 .play-btn .title { font-size: 1.05rem; display: block; }
 
+.pwa-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--white-off);
+  padding: 14px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(var(--edge-rgb), 0.18);
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s, transform 0.4s var(--ease-guardian);
+}
+
+.pwa-btn:hover {
+  border-color: rgba(var(--red-rgb), 0.4);
+  transform: translateY(-2px);
+}
+
+.pwa-btn .icon { width: 1.6rem; height: 1.6rem; flex-shrink: 0; }
+.pwa-btn .label { font-size: 0.72rem; font-weight: 500; display: block; }
+.pwa-btn .title { font-size: 1.05rem; display: block; }
+
 .download-image {
   flex-shrink: 0;
   width: 220px; height: 300px;
@@ -975,7 +997,7 @@ footer {
   .download-section { padding: 80px 5%; }
   .download-inner { flex-direction: column; text-align: center; gap: 2rem; }
   .download-image { width: 100%; max-width: 320px; height: 220px; }
-  .apk-btn { width: 100%; justify-content: center; }
+  .apk-btn, .pwa-btn { width: 100%; justify-content: center; }
   .donate-section { padding: 80px 5%; }
   .donate-card { padding: 40px 20px; }
   .donate-options { flex-direction: column; gap: 0.8rem; }
