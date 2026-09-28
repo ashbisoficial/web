@@ -157,10 +157,9 @@ header.scrolled {
 }
 
 .logo img {
-  height: 42px;
+  height: 56px;
   width: auto;
   display: block;
-  filter: brightness(1);
   transition: opacity 0.2s;
 }
 .logo img:hover { opacity: 0.85; }
@@ -1114,4 +1113,31 @@ footer {
 
 @media (max-width: 480px) {
   #modal-soon .modal-card { padding: 40px 24px; }
+}
+
+/* Badge de estado "Disponible ahora" — usado en funcionalidades.html y acerca-de.html */
+.badge-status {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--red-dim);
+  color: var(--white);
+  border: 1px solid rgba(var(--red-rgb), 0.5);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+.badge-status svg {
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: -0.1em;
+}
+
+.badge-status.is-soon {
+  background: rgba(var(--edge-rgb), 0.06);
+  color: var(--gray);
+  border-color: rgba(var(--edge-rgb), 0.15);
 }
